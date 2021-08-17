@@ -1,0 +1,7 @@
+{
+   "JWT_CONFIG":{
+    "SECRET":"MYAPP"
+}
+
+}
+
