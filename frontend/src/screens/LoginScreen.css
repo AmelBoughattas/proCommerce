@@ -1,31 +1,35 @@
-body {
-   /*  background-image: url(http://kreativo.se/backlogin.jpg); */
-    font-family: "Helvetica Neue", Helvetica, Arial;
-  /*   padding-top: 20px; */
-  background-color: white
-  
-}
+/* body {
+    font-family: "Helvetica Neue", Helvetica, Arial; 
+} */
 .container1{
     display:grid;
-    grid-template-columns: auto auto auto; 
+    grid-template-columns: auto auto auto;
+    max-width: 1300px ;
     margin: 10rem auto;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
 }
-/* .container_Register {
-      width: 200px; 
- max-width:200px;
-    margin: 0 auto;  
-} */
+
 .container_Login {
-    width: 406px;
-    max-width: 406px;
-    margin: 40px auto;
+    width: 348px;
+    /* max-width: 406px; */
+    margin:50px 0 0 150px;
 }
+
+.container_Register{
+  margin-bottom: 50px;
+
+}
+
 .vertical-line{
-    border-left: 2px solid #000;
+    border-left: 3mm ridge rgba(134, 111, 145, 0.6); 
+    border-radius: 10px 10px ;
     display: inline-block;
-    height:auto;/* 
-    margin: 20px 20px 20px -100px; */
-    margin-top:30px
+    height:auto;
+    
+    margin-top:30px;
+    margin-bottom: 30px;
+    
 }
 
 #signup {
@@ -80,15 +84,15 @@ body {
     display: block;
 }
 
-input::-webkit-input-placeholder {
+.input_login::-webkit-input-placeholder {
     color:    #b5b5b5;
 }
 
-input:-moz-placeholder {
+.input_login:-moz-placeholder {
     color:    #b5b5b5;
 }
 
-#signup .inputs input[type=email], input[type=password] {
+#signup .inputs .input_login[type=email], .input_login[type=password] {
     background: #f5f5f5;
     font-size: 0.8rem;
     -moz-border-radius: 3px;
@@ -102,7 +106,7 @@ input:-moz-placeholder {
     clear: both;
 }
 /* register */
-#signup .inputs input[type=firstname], input[type=lastname] {
+#signup .inputs .input_login[type=firstname], .input_login[type=lastname] {
     background: #f5f5f5;
     font-size: 0.8rem;
     -moz-border-radius: 3px;
@@ -115,15 +119,15 @@ input:-moz-placeholder {
     box-shadow: inset 0px 2px 3px rgba( 0,0,0,0.1 );
     clear: both;
 }
-#signup .inputs input[type=firstname]:focus, input[type=lastname]:focus {
+#signup .inputs .input_login[type=firstname]:focus, .input_login[type=lastname]:focus {
     background: #fff;
-    box-shadow: 0px 0px 0px 3px #fff38e, inset 0px 2px 3px rgba( 0,0,0,0.2 ), 0px 5px 5px rgba( 0,0,0,0.15 );
+    box-shadow: 0px 0px 0px 3px #facae5, inset 0px 2px 3px rgba( 0,0,0,0.2 ), 0px 5px 5px rgba( 0,0,0,0.15 );
     outline: none;   
 }
 /* ens register */
-#signup .inputs input[type=email]:focus, input[type=password]:focus {
+#signup .inputs .input_login[type=email]:focus, .input_login[type=password]:focus {
     background: #fff;
-    box-shadow: 0px 0px 0px 3px #fff38e, inset 0px 2px 3px rgba( 0,0,0,0.2 ), 0px 5px 5px rgba( 0,0,0,0.15 );
+    box-shadow: 0px 0px 0px 3px #facae5, inset 0px 2px 3px rgba( 0,0,0,0.2 ), 0px 5px 5px rgba( 0,0,0,0.15 );
     outline: none;   
 }
 
@@ -135,7 +139,7 @@ input:-moz-placeholder {
     clear: both;
 }
 
-#signup .inputs input[type=checkbox] {
+#signup .inputs .input_login[type=checkbox] {
     float: left;
     margin-right: 10px;
     margin-top: 3px;
@@ -159,8 +163,8 @@ input:-moz-placeholder {
     text-decoration: none;
         background: -moz-linear-gradient(
         top,
-        #b9c5dd 0%,
-        #a4b0cb);
+        #facae5 0%,
+        #facae5);
     background: -webkit-gradient(
         linear, left top, left bottom, 
         from(#b9c5dd),
@@ -195,4 +199,120 @@ input:-moz-placeholder {
         linear, left top, left bottom, 
         from(#a4b0cb),
         to(#b9c5dd));
+}
+
+
+@media (max-width: 1332px) {
+     .container1 {  
+        max-width: 1000px ;
+     }
+     .container_Login {
+        width: 308px;
+        margin:50px 0 0 100px;
+    }
+    
+    .container_Register{
+      margin-bottom: 50px;
+    
+    }
+  }
+  
+  @media (max-width: 1232px) {
+ 
+  }
+  
+  @media (max-width: 1050px) {
+    .container1 {  
+        max-width: 880px ;
+     }
+     .container_Login {
+        width: 308px;
+        margin:50px 0 0 50px;
+    }
+    
+    .container_Register{
+      margin-bottom: 50px;
+    
+    }
+  }
+  
+  @media (max-width: 950px) {
+    .container1 {  
+        max-width: 800px ;
+     }
+     .container_Login {
+        width: 308px;
+        margin:50px 0 0 50px;
+    }
+    
+    .container_Register{
+      margin-bottom: 50px;
+    
+    }
+  }
+  @media (max-width: 850px) {
+    .container1 {  
+        max-width: 730px ;
+     }
+     .container_Login {
+        width: 308px;
+        margin:50px 0 0 15px;
+    }
+    
+    .container_Register{
+      margin-bottom: 50px;
+    
+    }
+  }
+  @media (max-width: 750px) {
+   .container1{
+    display:grid;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 550px ;
+   }
+   .container_Login {
+   
+    margin:50px 0 0 130px;
+}
+
+.container_Register{
+    margin:-50px 0 50px 100px;
+    
+}
+  }
+  @media (max-width: 650px) {
+    .container_contact{
+      max-width: 500px ;
+    }
+    .style{
+      display:none
+    }
+    .form{
+      margin-left:50px;
+    
+    }
+    .words {
+      margin-top:20px;
+      margin-left:-80px
+    }
+    .words span {
+      font-size:25px;
+      
+    }
+    .contact{
+   
+      margin-left:-40px
+    }
+  }
+
+@media (max-width: 550px){
+    .container1{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 1300px ;
+        margin: 10rem auto;
+        border-radius: 6px;
+        box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+    }
+    
 }

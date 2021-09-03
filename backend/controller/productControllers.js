@@ -36,29 +36,30 @@ const addProduct = async (req, res) => {
 const getProducts = async (req, res) => {
   try 
   {  
-   /*  let limit = +req.query.limit
+    let limit = +req.query.limit
     let pageNumber = +req.query.page
-    let documentCount = await Post.find().countDocuments()
-    let numberTotalOfpages = Math.ceil(documentCount / limit); */
+    let documentCount = await Product.find().countDocuments()
+    let numberTotalOfpages = Math.ceil(documentCount / limit); 
 
  /*    if(numberTotalOfPages < doucmentCount / limit)
        numberTotalOfPages++ */
        //out of band verifcation
-    /*    if (pageNumber > numberTotalOfpages)
-       pageNumber = numberTotalOfpages */
+        if (pageNumber > numberTotalOfpages)
+       pageNumber = numberTotalOfpages 
     const products = await Product.find({})
-    /* .select({ '__v': 0 })
-    .sort({ 'createdAt': -1 })
-    .populate({ path: 'owner', select: "firstname lastname email _id role " })
+     .select({ '__v': 0 })
+     .sort({ 'createdAt': -1 }) 
+    /*.populate({ path: 'owner', select: "firstname lastname email _id role " })
+   */
     .skip((pageNumber - 1) * limit)
-    .limit(limit) */
+    .limit(limit) 
 
-    res.json(products );
+    res.json(products);
 
   } 
   catch (err) {
     /* console.error(error); */
-    res.status(500).json({ message: "Server Error" });
+    res.status(400).json({ message: "Server Error" });
   }
 };
 
@@ -102,6 +103,7 @@ const updateProduct = async(req, res)=>{
   try{
    const updateProduct = await Product.findByIdAndUpdate(req.params.id,{...req.body})
     res.json(updateProduct)
+    
   }
   catch(err)
   {
@@ -109,7 +111,7 @@ const updateProduct = async(req, res)=>{
   }
 }
 
-/* const getProductsCount = async (req, res) =>{
+const getProductsCount = async (req, res) =>{
   try{
      const count = await Product.find().countDocuments()
      res.json({count})
@@ -118,5 +120,5 @@ const updateProduct = async(req, res)=>{
   {
      res.status(400).json({errors:[{msg: err.message}]})
   }
-} */
-module.exports = { addProduct, getProducts, getProductById, getMyProduct, deleteProduct, updateProduct /* ,getProductsCount */}
+}
+module.exports = { addProduct, getProducts, getProductById, getMyProduct, deleteProduct, updateProduct ,getProductsCount}

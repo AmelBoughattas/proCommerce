@@ -8,17 +8,21 @@ export const getProductsReducer = (state = { products: [] }, action) => {
         return {
           loading: true,
           products: [],
-        };
+          };
       case actionTypes.GET_PRODUCTS_SUCCESS:
         return {
           products: action.payload,
-          loading: false,
+          loading: false, 
         };
-      case actionTypes.GET_PRODUCTS_FAIL:
+
+      case actionTypes.GET_PRODUCTS_FAILED:
         return {
           loading: false,
           error: action.payload,
         };
+
+      
+       
       default:
         return state;
     }
@@ -35,7 +39,7 @@ export const getProductsReducer = (state = { products: [] }, action) => {
           loading: false,
           product: action.payload,
         };
-      case actionTypes.GET_PRODUCT_DETAILS_FAIL:
+      case actionTypes.GET_PRODUCT_DETAILS_FAILED:
         return {
           loading: false,
           error: action.payload,
@@ -48,4 +52,19 @@ export const getProductsReducer = (state = { products: [] }, action) => {
         return state;
     }
   };
-  
+   
+ export  const ProductReducer = (state = { product: {} }, {type,payload}) =>{
+    switch (type) {
+      case actionTypes.DELETE_PRODUCT_SUCCESS:
+        return {
+          ...state,
+          product:state.prodcut.filter(elm=>elm._id!==payload)
+        }
+               
+               
+       
+
+       default: 
+      return state;
+    }
+  }  

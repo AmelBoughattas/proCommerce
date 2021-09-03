@@ -4,7 +4,11 @@ import { prefixe } from "../../helpers/constants";
 import {setToken}from '../../helpers/helpers'
 /* import { getMyPosts } from "./postActions"; */
 import { getMyProduct } from "./productActions";
+/* import { getMyCommand } from "./commandActions"; */
 //info contient email e password
+
+
+
 export const login = (info) => async (dispatch) =>{
    dispatch({type:LOGIN_REQUEST})
    try{
@@ -12,7 +16,9 @@ export const login = (info) => async (dispatch) =>{
    dispatch({
        type: LOGIN_SUCCESS,
        payload : res.data
-   })   
+   })  
+   dispatch (getProfile())
+   //dispatch(getMyCommand())
 } catch (err) {
     dispatch({
         type:LOGIN_FAILED,
@@ -50,7 +56,8 @@ export const register = (info) => async (dispatch) =>{
             type :REGISTER_SUCCESS,
             payload : res.data
         })
-        window.alert("Register Success")
+        window.alert("Register Success") 
+  
     } catch (err) {
         dispatch({
             type:REGISTER_FAILED,

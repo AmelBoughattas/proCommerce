@@ -1,14 +1,18 @@
 import "./ProductHistroy.css";
-const ProductHistory = ({ imageUrl, description, price, name, productId }) => {
+
+const ProductHistory = ({ imageUrl,  price, name}) => {
+      
+
     return (
-        <div className="product_his">
+        <div className="command">
             <img src={imageUrl} alt={name} />
 
             <div className="product__info">
                 <p className="info__name">{name}</p>
               
                 <p className="info__price">${price}</p>
-
+            
+               
                
             </div>
         </div>

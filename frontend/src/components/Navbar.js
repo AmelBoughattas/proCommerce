@@ -1,7 +1,8 @@
-import "./Navbar.css";
+import "./Navbar.css"; 
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/authActions";
+
 
 const Navbar = ({ click }) => {
 
@@ -23,23 +24,28 @@ const Navbar = ({ click }) => {
     <nav className="navbar">
       <div className="navbar__logo2 ">
         <div className="bd">
-          <div class="sign sign1" >
+          <div class="sign sign1 words word-1" >
 
-            <span class="fast-flicker1 ">Welcome</span>
-
-            <div className="part1">
+            <span class="fast-flicker1 ">m</span>
+            <span class="fast-flicker1 ">a</span>
+            <span class="fast-flicker1 ">y</span>
+            <span class="fast-flicker1 ">c</span>
+            <span class="fast-flicker1 ">o</span>
+            <span class="fast-flicker1 ">l</span>
+            <span class="fast-flicker1 ">l</span>
+           {/*  <div className="part1">
              
               <span class="flicker1 ">  In &nbsp;</span>
             </div>
             <div className='part2 '>
               <span>Shopping</span>
-            </div>
+            </div> */}
           </div>
 
         </div>
       </div>
 
-      <ul className="navbar__links topBotomBordersIn">
+      <ul className="navbar__links topBotomBordersIn ">
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -58,16 +64,16 @@ const Navbar = ({ click }) => {
           }
 
           {auth.user && auth.user.role === 'admin' &&
-            <Link to="/profileAdmin"><h1 style={{  color:"#ff65bd"}}> {auth.user && auth.user.firstname}</h1></Link>
-          }  {auth.user && auth.user.role === 'user' &&
-            <Link to="/profile"><h1 style={{ color:"#ff65bd" }}> {auth.user && auth.user.firstname}</h1></Link>
+            <Link to="/profileAdmin" className="link"><h1 style={{  color:"#ff65bd"}}> {auth.user && auth.user.firstname}</h1></Link>
+          }  {auth.user && auth.user.role === 'user' && 
+            <Link to="/profile" className="link"><h1 style={{ color:"#ff65bd"  }}> {auth.user && auth.user.firstname}</h1></Link>
           }
           
         </p>
 
         {auth.isAuth &&
           <p>
-            <button onClick={() => dispatch(logout())} ><i class="fas fa-sign-out-alt"></i></button>
+            <span onClick={() => dispatch(logout())} ><i class="fas fa-sign-out-alt"></i></span>
           </p>}
           
         <p className="navCount">

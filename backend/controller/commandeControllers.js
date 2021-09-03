@@ -40,8 +40,9 @@ const getCommande = async(req, res)=>{
     })
     console.log(result) */
     const owner=req.userId
-    const res= await getAsynCommade(owner)
-    console.log(res)
+    const commandes= await Command.find({owner:owner})
+    
+    res.json(commandes)
      }
   catch (err) {
     res.status(400).json({ err: err.message })
@@ -53,7 +54,7 @@ const getAsynCommade = (owner)=>{
   return new Promise(async (resolve,reject)=>{
     var result={}
     
-     const user= await User.findOne({_id:owner})
+     
      console.log(user)
      user.commandeList.map(async(elm)=>{
        var list= await Command.find({cartId:elm}) 

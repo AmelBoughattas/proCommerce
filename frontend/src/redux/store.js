@@ -12,7 +12,7 @@ const reducer = combineReducers({
   getProducts: getProductsReducer,
   getProductDetails: getProductDetailsReducer,
   auth: authReducer,
-  /* posts:postReducer, */
+ /*  product: ProductReducer */
   });
   
   const middleware = [thunk];

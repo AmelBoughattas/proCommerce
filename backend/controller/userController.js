@@ -58,7 +58,7 @@ const login = async (req, res) => {
             sub : user._id
         }
         const token = await jwt.sign(payload,process.env.SECRET)
-        res.json({token})
+        res.json({token,role:user.role})/* res.json({token}) */
 
     } catch(err){
         res.status(500).json({ errors: [{msg: err.message}] })

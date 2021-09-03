@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import './ProfileAdminScreen.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProfile, logout } from '../redux/actions/authActions'
-import { Link, Redirect } from 'react-router-dom';
+import { getProfile } from '../redux/actions/authActions'
 /* import AddPost from '../components/AddPost' */
 import { getProducts } from '../redux/actions/productActions';
 import AddProduct from '../components/AddProduct';
@@ -20,8 +19,11 @@ const ProfileAdminScreen = () => {
     }, [dispatch])
 
     return (
-        <div style={{margin:"160px"}}>
-            <Link to="/"><h1 >Profile page for admin {auth.user && auth.user.firstname}</h1></Link>
+        <div className="profileAdmin" >
+            
+            <h1 >
+                Profile admin {auth.user && auth.user.firstname}
+            </h1>
           {/*   <AddPost></AddPost> */}
           <AddProduct></AddProduct>
             <div>

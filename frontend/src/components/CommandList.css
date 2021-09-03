@@ -1,0 +1,19 @@
+.CommandList{
+    border:2px solid black;
+    border-radius: 10px;
+    margin:0 20px 20px 20px
+}
+
+.commandList__ligne {
+    display:flex;
+    color:red;
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive; 
+    margin:5px 0 0 20px;
+}
+.total {
+    margin-left:80%;
+   color:red;   
+   font-size: 20px;
+   font-family: 'Dancing Script', cursive; 
+}

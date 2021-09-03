@@ -1,8 +1,10 @@
 .productscreen {
   max-width: 1300px;
-/*   margin:1rem auto; */
   display: flex;
   margin: 10rem auto;
+  height:800px;
+  border-radius: 6px;
+  box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
 }
 
 .productscreen__left{
@@ -13,6 +15,10 @@
 .left__image{
   margin:1rem;
   flex: 0.6;
+
+}
+.left__image img{
+  width: 100%
 }
 
 .left__info{

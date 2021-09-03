@@ -1,22 +1,29 @@
 import './CartScreen.css';
 import CartItem from '../components/CartItem';
 import { useSelector, useDispatch } from "react-redux";
-import { Link /*1 useHistory  */ } from "react-router-dom";
-import GooglePayButton from '@google-pay/button-react';
+import { Link   } from "react-router-dom";
 
-/*1 import {useState} from 'react'; */
+/*  import {useState} from 'react'; */
+
+/* Paypal */
+import { PayPalButton } from "react-paypal-button-v2";
 
 // Actions
-import { addToCart,/* 1 clearCart,  */removeFromCart } from "../redux/actions/cartActions";
+import { addToCart, /* clearCart,  */removeFromCart } from "../redux/actions/cartActions";
 import { addCommand } from '../redux/actions/commandActions';
-import { useState } from 'react';
+/* import { useState } from 'react'; */
 
-/* 1 import Paypal from '../components/Paypal'; */
+import swal from 'sweetalert'
+
 const CartScreen = () => {
 
+  /* PAY PAL */ 
+/*   const [checkout, setCheckout] = useState(false) */
 
   const dispatch = useDispatch();
-  /*1 const history=useHistory() */ /*1 clear */
+  /*1 */
+/*    const history=useHistory()  *//*1 clear */
+
   const cart = useSelector((state) => state.cart);
 
 
@@ -39,12 +46,19 @@ const CartScreen = () => {
       .reduce((price, item) => price + item.price * item.qty, 0)
       .toFixed(2);
   };
+    /*1 -> localStorage ->histrory*/
   const newCommand=()=>{
    dispatch(addCommand(cart.cartItems)) 
+   
+   /* clear cart  */
+   /* localStorage.clear()
+   dispatch(clearCart())
+   history.push('/') */
   }
 
   //Payement
-  /*1    const [payement, setPayement] = useState(false) */
+  /* 
+    const [payement, setPayement] = useState(false) */
 
   /*1 const handlePayment = ()=>{
     localStorage.clear()
@@ -52,8 +66,9 @@ const CartScreen = () => {
     history.push('/')
   } */
  
- 
-
+ /* paypal metho 2 */
+/*  const [state, setState]=useState(0); */
+ const auth = useSelector((state) => state.auth);
   return (
     <>
       <div className="cartscreen">
@@ -79,69 +94,43 @@ const CartScreen = () => {
           </div>
           
           <div>
-            {/*  <Link /> */}
-              <button onClick={newCommand}>Payement</button>
-            {/* </Link> */}
+          { !auth.isAuth  ?  
+              <Link to='/login'>  
+             <button onClick={newCommand}>Payement</button>
+               </Link>  :  <button onClick={newCommand}>Payement</button>}
 
-            {/* Google Pay */}
-            <GooglePayButton
-              environment="TEST"
-              paymentRequest={{
-                apiVersion: 2,
-                apiVersionMinor: 0,
-                allowedPaymentMethods: [
-                  {
-                    type: 'CARD',
-                    parameters: {
-                      allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-                      allowedCardNetworks: ['MASTERCARD', 'VISA'],
-                    },
-                    tokenizationSpecification: {
-                      type: 'PAYMENT_GATEWAY',
-                      parameters: {
-                        gateway: 'example',
-                        gatewayMerchantId: 'exampleGatewayMerchantId',
-                      },
-                    },
-                  },
-                ],
-                merchantInfo: {
-                  merchantId: '12345678901234567890',
-                  merchantName: 'Demo Merchant',
-                },
-                transactionInfo: {
-                  totalPriceStatus: 'FINAL',
-                  totalPriceLabel: 'Total',
-                  totalPrice: '2',
-                  currencyCode: 'USD',
-                  countryCode: 'US',
-                },
-                shippingAddressRequired: true,
-                callbackIntents: ['SHIPPING_ADDRESS', 'PAYMENT_AUTHORIZATION'],
-              }}
-              onLoadPaymentData={paymentRequest => {
-                console.log('Success', paymentRequest);
-              }}
-              onPaymentAuthorized={paymentData => {
-                console.log('Payment Authorised Success', paymentData)
-                return { transactionState: 'SUCCESS' }
-              }
-              }
-              onPaymentDataChanged={paymentData => {
-                console.log('On Payment Data Changed', paymentData)
-                return {}
-              }
-              }
-              existingPaymentMethodRequired='false'
-              buttonColor='black'
-              buttonType='Buy'
-            />
 
-            {/* 1 {payement ? (
-                  <Paypal />
-                ) : (
-                <button  onClick={()=>setPayement(true)} >Payement</button>
-                )} */}
+     { auth.isAuth && auth.user.role==="user"  ?  
+     <div className="paypalBtn">
+      <PayPalButton 
+       options={
+      {   clientId:"ARsMDdQNm2aFqqTnK14krc7MeTxzCZfu2Bn-jeICWUhObBzKGno7QBzKifoK8ZUdRi5s28TVhACVZuuL",
+         currency:"USD",}
+        }
+         amount={getCartSubTotal()}
+          onSuccess={(details, data) => {
+          /*   swal("Good job!","Success, Transaction completed by " + details.payer.name.given_name); */
+          swal("Success, Transaction completed by " + details.payer.name.given_name);
+         /*  alert("Transaction completed by " + details.payer.name.given_name); */
+
+         console.log({details: data})
+        }}
+      /></div>
+      :<Link to="/login" />  }
+         
+        {/* Paypal  meth1*/}
+       {/*  {checkout ? (
+        <Paypal amount={getCartSubTotal()} />
+      ) : (
+        <button
+          onClick={() => {
+            setCheckout(true);
+          }}
+        >
+          Pay
+        </button>
+      )} */}
+                
           </div>
         </div>
 

@@ -18,10 +18,21 @@ const tokenMiddleware =async (req,res,next) => {
     }
 
 }
+const checkAdmin= async (req, res, next) => {
+    
+    const existuser= await User.findById(req.userId)
+    if(existuser.role==='admin')
+{ 
+    next()
+} else
+{
+    return res.status(401).json({err:'your not auth !'})
 
-const checkAdmin = async (req, res, next) =>{
+}
+}
+/* const checkAdmin = async (req, res, next) =>{
     try{
-        //const product = await Product.findOne({_id:req.params.id, owner:req.userId})
+      
 const user= User.findById(req.userId)
          if(!user)
              return res.status(401).json({err:'not authorized !'})
@@ -33,7 +44,7 @@ const user= User.findById(req.userId)
         return res.status(401).json()
     }
 
-}
-
-
+} */
+ 
+ 
 module.exports = {tokenMiddleware, checkAdmin}

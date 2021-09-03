@@ -9,12 +9,13 @@
     justify-content:space-between;
   }
   
-  .product > {
-      height:170px;
-      border-radius: 8px;
-  
+ 
+  .product > img {
+    width: 100%;
+    height: 60%;
+    object-fit: contain;
+    border-radius: 8px;
   }
-  
   .product__info >p{
       margin-bottom: 8px;
   }

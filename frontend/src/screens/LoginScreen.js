@@ -27,7 +27,7 @@ const LoginScreen = () => {
         if (auth.isAuth &&  auth.user && auth.user.role === 'admin')
             history.push('/profileAdmin')
         else if (auth.isAuth && auth.user &&  auth.user.role === 'user')
-            history.push('/profile')
+            history.push('/cart')
         
     }, [dispatch,history,auth.isAuth,auth.user])
 
@@ -59,10 +59,10 @@ const LoginScreen = () => {
 
                 <div class="inputs">
                     
-                    <input type="email" placeholder="account@domain.ext" autofocus onChange={(e) => setInfo({ ...info, email: e.target.value })}></input>
-                    <input type="password" placeholder="*********" onChange={(e) => setInfo({ ...info, password: e.target.value })}></input>
+                    <input className="input_login" required type="email" placeholder="account@domain.ext" autofocus onChange={(e) => setInfo({ ...info, email: e.target.value })}></input>
+                    <input  className="input_login" required  type="password" placeholder="*********" onChange={(e) => setInfo({ ...info, password: e.target.value })}></input>
                     <button className="submit" type="submit" href="#" >Submit Now</button>
-                    <button className="submit" type="reset" href="#" >Reset</button>
+                    {/* <button className="submit" type="reset" href="#" >Reset</button> */}
                     {/*   <button type="reset" style={{ alignSelf: 'flex-end', color: "black" }}>Reset</button> */}
                    {/*  <div class="checkboxy">
                         <input name="cecky" id="checky" value="1" type="checkbox" /><label class="terms">I accept the terms of use</label>
@@ -73,7 +73,7 @@ const LoginScreen = () => {
 
             <div className="vertical-line"><span ></span></div>
 
-            <div class="container_Register">
+            <div className="container_Register">
             <form id="signup" onSubmit={handleRegister}>
                 <div class="header">
                     <h3>Register</h3>
@@ -83,12 +83,14 @@ const LoginScreen = () => {
                
                 <div class="inputs">
                     {/*   <form className="flex-column-center" onSubmit={handleSubmit}> */}
-                    <input type="firstname" placeholder="First name" autofocus onChange={(e) => setInfo2({ ...info2, firstname: e.target.value })}></input>
-                    <input type="lastname" placeholder="Last name" onChange={(e) => setInfo2({ ...info2, lastname: e.target.value })}></input>
-                    <input type="email" placeholder="Email" autofocus onChange={(e) => setInfo2({ ...info2, email: e.target.value })}></input>
-                    <input type="password" placeholder="Password" onChange={(e) => setInfo2({ ...info2, password: e.target.value })}></input>
+                    <input  className="input_login" required type="firstname" placeholder="First name" autofocus onChange={(e) => setInfo2({ ...info2, firstname: e.target.value })}></input>
+                    <input  className="input_login" required  type="lastname" placeholder="Last name" onChange={(e) => setInfo2({ ...info2, lastname: e.target.value })}></input>
+                    <input  className="input_login" required type="email" placeholder="account@domain.ext" autofocus onChange={(e) => setInfo2({ ...info2, email: e.target.value })}></input>
+                    <input  className="input_login" required type="password" placeholder="***********" onChange={(e) => setInfo2({ ...info2, password: e.target.value })}></input>
                    
                     <button className="submit" type="submit"  href="#" >Register Now</button>
+                 
+              
           
                     {/*   <button type="reset" style={{ alignSelf: 'flex-end', color: "black" }}>Reset</button> */}
                    {/*  <div class="checkboxy">
