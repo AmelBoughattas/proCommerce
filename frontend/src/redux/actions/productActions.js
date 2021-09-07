@@ -2,7 +2,7 @@
 import axios from "axios";
 import { prefixe } from '../../helpers/constants';
 import { setToken } from '../../helpers/helpers';
-import {UPDATE_PRODUCT_SUCCESS, ADD_PRODUCTS_REQUEST, ADD_PRODUCTS_SUCCESS, ADD_PRODUCTS_FAILED , GET_MY_PRODUCT_REQUEST, GET_MY_PRODUCT_SUCCESS,GET_MY_PRODUCT_FAILED,GET_PRODUCT_DETAILS_REQUEST,GET_PRODUCT_DETAILS_SUCCESS,GET_PRODUCT_DETAILS_FAILED, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_REQUEST, GET_PRODUCTS_FAILED, GET_PRODUCT_DETAILS_RESET, GET_PRODUCTS_COUNT_REQUEST, GET_PRODUCTS_COUNT_SUCCESS, GET_PRODUCTS_COUNT_FAILED, DELETE_PRODUCT_REQUEST, DELETE_PRODUCT_SUCCESS, UPDATE_PRODUCT_REQUEST, UPDATE_PRODUCT_FAILED, DELETE_PRODUCT_FAILED} from '../constants/ProductConstants'
+import {UPDATE_PRODUCT_SUCCESS, ADD_PRODUCTS_REQUEST, ADD_PRODUCTS_SUCCESS, ADD_PRODUCTS_FAILED , GET_MY_PRODUCT_REQUEST, GET_MY_PRODUCT_SUCCESS,GET_MY_PRODUCT_FAILED,GET_PRODUCT_DETAILS_REQUEST,GET_PRODUCT_DETAILS_SUCCESS,GET_PRODUCT_DETAILS_FAILED, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_REQUEST, GET_PRODUCTS_FAILED, GET_PRODUCT_DETAILS_RESET, GET_PRODUCTS_COUNT_REQUEST, GET_PRODUCTS_COUNT_SUCCESS, GET_PRODUCTS_COUNT_FAILED, DELETE_PRODUCT_REQUEST, DELETE_PRODUCT_SUCCESS, UPDATE_PRODUCT_REQUEST, UPDATE_PRODUCT_FAILED, DELETE_PRODUCT_FAILED, SUCCESS} from '../constants/ProductConstants'
 
 
 
@@ -11,14 +11,25 @@ export const addProduct = (newProduct)=> async (dispatch) =>{
   dispatch({type:ADD_PRODUCTS_REQUEST})
 
   try {
-   
       setToken()
       const {data} =await axios.post(`${prefixe}/api/product/addproduct`, newProduct)
       dispatch({
           type:ADD_PRODUCTS_SUCCESS ,
           payload:data
       })
-      window.alert("Product ajoutée avec success.") 
+      setTimeout(() => {
+        dispatch({
+            type: SUCCESS,
+            payload: 'Product added with success'
+        })
+    }, 1000)
+    
+    setTimeout(() => {
+      dispatch({
+          type: SUCCESS,
+          payload: false
+      })
+  }, 4000)
   }
   catch (err){
       
@@ -37,13 +48,10 @@ export const getProducts = () => async (dispatch) => {
  
       const { data } = await axios.get("/api/products");
   
-/*      const { data } = await axios.get(`${prefixe}/api/products?page=${page}&limit=${limit}`) */
-/*      */
       dispatch({
         type: GET_PRODUCTS_SUCCESS,
         payload: data,
       });
-    
 
     }
      catch (error) {
@@ -135,6 +143,7 @@ export const getProductDetails = (id) => async (dispatch) => {
   export const deleteProduct = (id) => async (dispatch) => {
     dispatch({type:DELETE_PRODUCT_REQUEST})
     try{
+      console.log(id)
       setToken()
       const {data} =await axios.delete(`${prefixe}/api/product/deleteproduct/${id}`)
           dispatch({

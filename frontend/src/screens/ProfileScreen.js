@@ -23,7 +23,7 @@ const ProfileScreen = () => {
     return (
        <div className="container_profile">
           <h1 className="title_profile">
-             Profile Client for {auth.user && auth.user.firstname}
+          liste des Comandes {auth.user && auth.user.firstname}
          </h1>
 
                  

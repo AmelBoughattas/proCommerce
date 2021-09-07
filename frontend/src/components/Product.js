@@ -1,22 +1,23 @@
 import "./Product.css";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";/* 
-import { EditOutlined , DeleteOutlined  } from '@ant-design/icons';  */
+import {   useSelector } from "react-redux";
+/* import { EditOutlined , DeleteOutlined  } from '@ant-design/icons';  */
 /* import { useState } from "react"; */
-import { deleteProduct } from "../redux/actions/productActions";
+/*  import { deleteProduct } from "../redux/actions/productActions";  */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DropdownButton,Dropdown } from 'react-bootstrap';
-const Product = ({     imageUrl, description, price, name, productId,product}) => {
 
-    const auth = useSelector(state => state.auth)
+const Product = ({ imageUrl, description, price, name, productId,product}) => {
+
+ /*    const auth = useSelector(state => state.auth) */
     
 
-/*  const dispatch = useDispatch()
+/*   const dispatch = useDispatch()
    const handleDelete =(e)=>{
        e.preventDefault()
        dispatch(deleteProduct(product._id)) 
-   }
- */
+   } */
+ 
 const user = useSelector(state=> state.auth.user)
     return (
         <div className="product">
@@ -38,7 +39,7 @@ const user = useSelector(state=> state.auth.user)
                        
                        <EditOutlined />  
                         } */}
-            <img src={imageUrl && imageUrl.url} alt={name} />
+           <img src={imageUrl && imageUrl.url} alt={name} />
             <div className="product__info">
 
                 <p className="info__name">{name}</p>

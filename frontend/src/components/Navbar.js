@@ -2,7 +2,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/authActions";
-
+import chariotLogo from "../Images/chariotLogo.png"
 
 const Navbar = ({ click }) => {
 
@@ -25,7 +25,7 @@ const Navbar = ({ click }) => {
       <div className="navbar__logo2 ">
         <div className="bd">
           <div class="sign sign1 words word-1" >
-
+           
             <span class="fast-flicker1 ">m</span>
             <span class="fast-flicker1 ">a</span>
             <span class="fast-flicker1 ">y</span>
@@ -33,6 +33,7 @@ const Navbar = ({ click }) => {
             <span class="fast-flicker1 ">o</span>
             <span class="fast-flicker1 ">l</span>
             <span class="fast-flicker1 ">l</span>
+            <span class="fast-flicker1 "><img src={chariotLogo} alt="logo" style={{width:"50px" ,height:"50px", marginTop:"-10px"}}/></span>
            {/*  <div className="part1">
              
               <span class="flicker1 ">  In &nbsp;</span>
@@ -64,9 +65,9 @@ const Navbar = ({ click }) => {
           }
 
           {auth.user && auth.user.role === 'admin' &&
-            <Link to="/profileAdmin" className="link"><h1 style={{  color:"#ff65bd"}}> {auth.user && auth.user.firstname}</h1></Link>
+            <Link to="/profileAdmin" className="link2"><h1 style={{  color:"#ff65bd"}}> {auth.user && auth.user.firstname}</h1></Link>
           }  {auth.user && auth.user.role === 'user' && 
-            <Link to="/profile" className="link"><h1 style={{ color:"#ff65bd"  }}> {auth.user && auth.user.firstname}</h1></Link>
+            <Link to="/profile" className="link2"><h1 style={{ color:"#ff65bd"  }}> {auth.user && auth.user.firstname}</h1></Link>
           }
           
         </p>

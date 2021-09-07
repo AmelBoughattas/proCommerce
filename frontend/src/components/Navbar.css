@@ -12,14 +12,14 @@
   margin:-10rem auto ;
  }
 
-
+/* sign sign1 words word-1" fast-flicker1 .words span  */
 h1{
   font-size:20px;
   margin-right:-30px;
   text-transform:capitalize;
 }
 
-.link{
+.link2{
   text-decoration: none;
 }
 
@@ -133,7 +133,7 @@ background-image: radial-gradient(
     transparent
   );
   
-  text-shadow: 0 0 0.6rem #f5e7f5, 0 0 1.5rem #ff65bd,
+  text-shadow: 0 0 0.6rem #f5e7f5, 0 0 1.5rem #ff65bd, link
     -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
     0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
   animation: shine 2s forwards, flicker 3s infinite; */
@@ -239,7 +239,7 @@ background-image: radial-gradient(
   top: 50%;
   font-family: "Clip";
   text-transform: uppercase;
-  font-size: 20px;
+  font-size:20px;
   color: #ffe6ff;
   text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
     -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
@@ -279,6 +279,7 @@ background-image: radial-gradient(
   animation: shine 2s forwards, blink 10s 1s infinite;
 /*   display: flex;
   justify-content: center; */
+
 
 }
 
@@ -481,9 +482,9 @@ background-image: radial-gradient(
   font-size: 0;
   line-height: 1.5;
 }
-
+/***words****/
 .words span {
-  font-size: 5rem;
+  font-size: 3rem;
   display: inline-block;
   animation: move 3s ease-in-out infinite;
 }

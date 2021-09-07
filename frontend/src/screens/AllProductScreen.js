@@ -21,7 +21,7 @@ const AllProductScreen = () => {
   
   return (
     <div className="homescreenPro" >
-        <h2 className="homescreenPro__title">All products</h2>
+        <h2 className="homescreenPro__title"><span>Shop Computer & Accessories</span></h2>
        
         <div className="homescreenPro__products">
 

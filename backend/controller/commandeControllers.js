@@ -1,12 +1,12 @@
 const Command = require("../models/Command");
-const cloudinary = require('../helpers/cloudinary')
+const cloudinary = require('../helpers/cloudinary');
 const uuid = require('uuid')
 const moment = require('moment-timezone');
 const User=require('../models/User')
 
 const addCommand = async (req, res) => {
   try {
-    console.log('hello')
+  
     var owner=req.userId
     var newCommand
     const cart = req.body

@@ -2,7 +2,7 @@ import * as actionTypes from "../constants/ProductConstants";
 
 
 
-export const getProductsReducer = (state = { products: [] }, action) => {
+export const getProductsReducer = (state = { products: [], success:false }, action) => {
     switch (action.type) {
       case actionTypes.GET_PRODUCTS_REQUEST:
         return {
@@ -20,7 +20,11 @@ export const getProductsReducer = (state = { products: [] }, action) => {
           loading: false,
           error: action.payload,
         };
-
+        case actionTypes.SUCCESS:
+          return {
+            ...state,
+            success:action.payload
+          }
       
        
       default:
@@ -48,23 +52,22 @@ export const getProductsReducer = (state = { products: [] }, action) => {
         return {
           product: {},
         };
+     
+
       default:
         return state;
     }
   };
    
- export  const ProductReducer = (state = { product: {} }, {type,payload}) =>{
+/*  export  const ProductReducer = (state = { product: {} }, {type,payload}) =>{
     switch (type) {
       case actionTypes.DELETE_PRODUCT_SUCCESS:
         return {
           ...state,
-          product:state.prodcut.filter(elm=>elm._id!==payload)
-        }
-               
-               
-       
+          product:state.prodcut.filter(elm=>elm._id!==payload._id)
+        }             
 
        default: 
       return state;
     }
-  }  
+  }   */

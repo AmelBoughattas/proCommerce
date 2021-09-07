@@ -16,13 +16,14 @@ const app = express();
 app.use(cors())
 app.use(express.json({limit:'50mb'}));
 app.use("/api/user",require('./routes/userRoutes')) 
-app.use('/api/post',require('./routes/postRoutes'))   
+/* app.use('/api/post',require('./routes/postRoutes'))  */  
 app.use('/api/product',require('./routes/productRoutes'))  
 
 //contact
 app.use('/api/contact', require('./routes/contactRoute'))
 
-app.use("/api/products", productRoutes); 
+//pagination
+ app.use("/api/products", productRoutes);  
 
 app.use("/api/command",require('./routes/commandRouter'))
 

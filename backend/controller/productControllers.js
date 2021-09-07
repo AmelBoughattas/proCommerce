@@ -36,29 +36,11 @@ const addProduct = async (req, res) => {
 const getProducts = async (req, res) => {
   try 
   {  
-    let limit = +req.query.limit
-    let pageNumber = +req.query.page
-    let documentCount = await Product.find().countDocuments()
-    let numberTotalOfpages = Math.ceil(documentCount / limit); 
-
- /*    if(numberTotalOfPages < doucmentCount / limit)
-       numberTotalOfPages++ */
-       //out of band verifcation
-        if (pageNumber > numberTotalOfpages)
-       pageNumber = numberTotalOfpages 
     const products = await Product.find({})
-     .select({ '__v': 0 })
-     .sort({ 'createdAt': -1 }) 
-    /*.populate({ path: 'owner', select: "firstname lastname email _id role " })
-   */
-    .skip((pageNumber - 1) * limit)
-    .limit(limit) 
-
     res.json(products);
 
   } 
   catch (err) {
-    /* console.error(error); */
     res.status(400).json({ message: "Server Error" });
   }
 };
@@ -69,9 +51,8 @@ const getProductById = async (req, res) => {
     const product = await Product.findById(req.params.id);
 
     res.json(product);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server Error" });
+  }catch(err){
+    res.status(400).json({errors:[{msg: err.message}]})
   }
 };
 
@@ -111,7 +92,7 @@ const updateProduct = async(req, res)=>{
   }
 }
 
-const getProductsCount = async (req, res) =>{
+/* const getProductsCount = async (req, res) =>{
   try{
      const count = await Product.find().countDocuments()
      res.json({count})
@@ -120,5 +101,5 @@ const getProductsCount = async (req, res) =>{
   {
      res.status(400).json({errors:[{msg: err.message}]})
   }
-}
-module.exports = { addProduct, getProducts, getProductById, getMyProduct, deleteProduct, updateProduct ,getProductsCount}
+} */
+module.exports = { addProduct, getProducts, getProductById, getMyProduct, deleteProduct, updateProduct }

@@ -20,15 +20,13 @@ const ProfileAdminScreen = () => {
 
     return (
         <div className="profileAdmin" >
-            
-            <h1 >
-                Profile admin {auth.user && auth.user.firstname}
-            </h1>
-          {/*   <AddPost></AddPost> */}
-          <AddProduct></AddProduct>
-            <div>
-                {/*    {posts.postList.length && posts.postList.map((post,index)=><Post key={index} post={post}></Post>)  } */}
-               
+            <div className="profileAdmin__form">
+                <div className="h1_">
+                    <h1 >
+                        Profile admin {auth.user && auth.user.firstname}
+                    </h1>
+                </div>
+                <AddProduct></AddProduct>
             </div>
 
         </div>
@@ -37,5 +35,5 @@ const ProfileAdminScreen = () => {
     )
 }
 
-export default  ProfileAdminScreen
+export default ProfileAdminScreen
 

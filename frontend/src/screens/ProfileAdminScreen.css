@@ -1,17 +1,25 @@
 .profileAdmin{
     margin: 10rem auto;
-/*     height:940px; */
+background: transparent;
     max-width: 1300px;
     border-radius: 6px;
     box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
     padding-top:30px
 }
+/* .profileAdmin__form{
+    margin-top:20px
+} */
 .profileAdmin h1 {
-    margin:30px 0 -140px 0;
-    text-align: center;
+    /*  margin:0px 0 0px 100px; 
+     padding-top:20px; */
+    
     font-family: 'Dancing Script', cursive;
     font-size: 28px;
     font-weight: 300;
     
-
+}
+.h1_{
+     margin-bottom: -80px; 
+    margin-left:50px;
+    color:white
 }
