@@ -20,7 +20,7 @@ export const addProduct = (newProduct)=> async (dispatch) =>{
       setTimeout(() => {
         dispatch({
             type: SUCCESS,
-            payload: 'Product added with success'
+            payload: 'Article ajouté avec success ! '
         })
     }, 1000)
     
@@ -150,7 +150,21 @@ export const getProductDetails = (id) => async (dispatch) => {
           type:DELETE_PRODUCT_SUCCESS ,
           payload:data
       })
-      window.alert("Product ajoutée avec success.") 
+     /*  window.alert("Product supprimé avec success.")  */
+     
+     setTimeout(() => {
+      dispatch({
+          type: SUCCESS,
+          payload: 'Article a été supprimé avec success !'
+      })
+  }, 1000)
+  
+  setTimeout(() => {
+    dispatch({
+        type: SUCCESS,
+        payload: false
+    })
+}, 4000)
     }
     catch(err) {
         dispatch({
@@ -161,15 +175,17 @@ export const getProductDetails = (id) => async (dispatch) => {
   }
 
    /* update product */
-   export const updateProduct = (updateProduct) => async (dispatch) => {
+   export const updateProduct = (_id,newProduct) => async (dispatch) => {
     dispatch({type:UPDATE_PRODUCT_REQUEST})
     try{
       setToken()
-      const {data} =await axios.put(`${prefixe}/api/product/updateProduct/${updateProduct._id}`,updateProduct)
+      const {data} =await axios.put(`${prefixe}/api/product/updateProduct/${_id}`,newProduct)
       dispatch({
         type:UPDATE_PRODUCT_SUCCESS,
         payload:data
       })
+      console.log(data);
+      
     }
       catch(err){
         dispatch({

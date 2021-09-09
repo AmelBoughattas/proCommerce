@@ -10,11 +10,15 @@
   margin-left:128px!important;
   margin-bottom: 20px;
 }
-/* .register-form{
-  margin-bottom: -50px;
-} */
+
+.succ_Adding{
+ text-align: center;
+  border-radius: 20px; 
+  
+}
+
 .register{
-/*   background: -webkit-linear-gradient(left, #3931af, #00c6ff); */
+/*   background: -webkit-linear-gradient(left, #3931af, #00c6ff);container1 btn_contact*/
 background-image: url('https://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
 background-size:cover;
  /*  margin-top: -2%; */
@@ -214,12 +218,17 @@ background-size:cover;
   .inputGroup .inputBar:before {
     left: 50%;
   }
-  
+  .Buttons{
+    display:flex;
+    flex-direction: row;
+   /*  justify-content:space-between */
+  }
   .btn_contact {
     background-color: white;
     border: none;
     padding: 15px 0;
-    margin: 0 0 -25rem 15rem!important;
+    margin-right:20px;
+  /*   margin: 0 0 -25rem 15rem!important; */
     width: 290px;
     color: #d1819c;
     text-transform: uppercase;
@@ -241,7 +250,31 @@ background-size:cover;
     top: 6px;
     box-shadow: 0 0;
   }
-   
+  .btn_contact_reset{
+
+    background-color: white;
+    border: none;
+    padding: 15px 0;
+    
+    width: 290px;
+    color: #d1819c;
+    text-transform: uppercase;
+    font-family: Trebuchet MS;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 6px #d1819c;
+    position: relative;
+    cursor: pointer;
+  }
+  .btn_contact_reset:hover {
+    box-shadow: 0 4px #a1a1a1;
+    top: 2px;
+  }
+  
+  .btn_contact_reset:active {
+    top: 6px;
+    box-shadow: 0 0;
+  }
 
 /* title designer animation *//* 
 .style{

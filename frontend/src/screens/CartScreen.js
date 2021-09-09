@@ -55,7 +55,7 @@ const CartScreen = () => {
    dispatch(clearCart())
    history.push('/') */
   }
-
+ 
   //Payement
   /* 
     const [payement, setPayement] = useState(false) */
@@ -73,11 +73,12 @@ const CartScreen = () => {
     <>
       <div className="cartscreen">
         <div className="cartscreen__left">
-          <h2>Shopping Cart</h2>
+          <h2>Panier</h2>
 
           {cartItems.length === 0 ? (
-            <div>
-              Your Cart Is Empty <Link to="/">Go Back</Link>
+            <div className="cartscreen__back"> 
+             <img className="cartscreen__back__img" src="https://i.imgur.com/dCdflKN.png" alt="" width="200" height="200"  />
+                Votre panier est vide <br/>Ajoutez quelque chose pour me faire plaisir :) <br/> <Link to="/"><span style={{fontWeight:'bold'}}>Go Back</span></Link>
             </div>
           ) : (
             cartItems.map((item) => (
@@ -89,8 +90,8 @@ const CartScreen = () => {
         </div>
         <div className="cartscreen__right">
           <div className="cartscreen__info">
-            <p>Subtotal ({getCartCount()}) items</p>
-            <p>${getCartSubTotal()}</p>
+            <p>Total ({getCartCount()}) article</p>
+            <p> {getCartSubTotal()} TND</p>
           </div>
           
           <div>
@@ -102,7 +103,7 @@ const CartScreen = () => {
 
      { auth.isAuth && auth.user.role==="user"  ?  
      <div className="paypalBtn">
-      <PayPalButton 
+      <PayPalButton  
        options={
       {   clientId:"ARsMDdQNm2aFqqTnK14krc7MeTxzCZfu2Bn-jeICWUhObBzKGno7QBzKifoK8ZUdRi5s28TVhACVZuuL",
          currency:"USD",}

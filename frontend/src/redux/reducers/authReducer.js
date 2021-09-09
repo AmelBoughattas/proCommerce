@@ -1,5 +1,6 @@
-import {LOGOUT, GET_PROFILE_FAILED,GET_PROFILE_REQUEST,GET_PROFILE_SUCCESS, LOGIN_FAILED, LOGIN_REQUEST, LOGIN_SUCCESS, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILED } from "../constants/authConstants"
+import {LOGOUT, GET_PROFILE_FAILED,GET_PROFILE_REQUEST,GET_PROFILE_SUCCESS, LOGIN_FAILED, LOGIN_REQUEST, LOGIN_SUCCESS, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILED, SUCCESS_REGISTER } from "../constants/authConstants"
 import { GET_MY_COMMAND_SUCCESS,GET_MY_COMMAND_REQUEST, GET_MY_COMMAND_FAILED } from "../constants/commandConstants"
+
 
 
 const initState ={
@@ -8,6 +9,8 @@ const initState ={
     user:{...JSON.parse(localStorage.getItem('user')),cmdList:[]},
     Loading:false,
     errors:null,
+    /* success */
+    success_register:false,
     //command
    
 }
@@ -95,7 +98,12 @@ const authReducer = (state= initState, {type,payload}) =>{
                 errors: payload,
                 token:null
             }
-
+            /* success */
+            case SUCCESS_REGISTER:
+                return {
+                  ...state,
+                  success_register:payload
+                }
        
         
            

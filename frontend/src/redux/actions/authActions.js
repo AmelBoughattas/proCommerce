@@ -1,4 +1,4 @@
-import {LOGOUT, GET_PROFILE_FAILED, GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS, LOGIN_FAILED, LOGIN_REQUEST, LOGIN_SUCCESS, REGISTER_REQUEST, REGISTER_FAILED, REGISTER_SUCCESS } from "../constants/authConstants"
+import {LOGOUT, GET_PROFILE_FAILED, GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS, LOGIN_FAILED, LOGIN_REQUEST, LOGIN_SUCCESS, REGISTER_REQUEST, REGISTER_FAILED, REGISTER_SUCCESS, SUCCESS_REGISTER } from "../constants/authConstants"
 import axios from 'axios';
 import { prefixe } from "../../helpers/constants";
 import {setToken}from '../../helpers/helpers'
@@ -56,7 +56,21 @@ export const register = (info) => async (dispatch) =>{
             type :REGISTER_SUCCESS,
             payload : res.data
         })
-        window.alert("Register Success") 
+       /*  window.alert("Register Success")  */
+           /* success */
+      setTimeout(() => {
+        dispatch({
+            type: SUCCESS_REGISTER,
+            payload: 'Register added with success'
+        })
+    }, 1000)
+    
+    setTimeout(() => {
+      dispatch({
+          type: SUCCESS_REGISTER,
+          payload: false
+      })
+  }, 4000)
   
     } catch (err) {
         dispatch({

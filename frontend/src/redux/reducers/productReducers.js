@@ -59,15 +59,15 @@ export const getProductsReducer = (state = { products: [], success:false }, acti
     }
   };
    
-/*  export  const ProductReducer = (state = { product: {} }, {type,payload}) =>{
+/*   export  const ProductReducer = (state = { product: {} }, {type,payload}) =>{
     switch (type) {
-      case actionTypes.DELETE_PRODUCT_SUCCESS:
+      case actionTypes.UPDATE_PRODUCT_SUCCESS:
         return {
           ...state,
-          product:state.prodcut.filter(elm=>elm._id!==payload._id)
+          product:state.product.map(el=>el.id===payload.id? payload : el)
         }             
 
        default: 
       return state;
     }
-  }   */
+  }    */

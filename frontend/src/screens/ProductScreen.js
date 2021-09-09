@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 // Actions
 import { getProductDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
+import { Link } from 'react-router-dom';
 
 const ProductScreen = ({ match, history }) => {
 
@@ -34,7 +35,7 @@ const ProductScreen = ({ match, history }) => {
             ) : error ? (
                 <h2>{error}</h2>
             ) : (
-                <>
+                <>  
                     <div className="productscreen__left">
                         <div className="left__image">
                             <img src={product.imageUrl && product.imageUrl.url} alt={product.name} /> 
@@ -66,7 +67,7 @@ const ProductScreen = ({ match, history }) => {
                                 </select>
                             </p>
                             <p>
-                                <button type="button"onClick={addToCartHandler}> Add to cart</button>
+                                <button type="button" onClick={addToCartHandler}> Add to cart</button>
                             </p>
                         </div>
 

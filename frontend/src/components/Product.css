@@ -1,3 +1,41 @@
+.priceContainer{
+    display: flex;
+    border: 1px solid black;
+    width: auto;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 5px;
+    transition: opacity 500ms ease-in-out;
+    border-radius: 15px;
+    background-color: aqua;
+    opacity: 0.65;
+    height:50px;
+    align-items: center;
+    border: none;
+    
+
+}
+
+.price{
+    width: 300px;
+    font-family: 'Anton', sans-serif;
+    word-spacing: 5px;
+}
+
+.button{
+    width: 60px;
+    border: none;
+    background-color: aqua;
+}
+
+.trash-btn{
+    padding: 50px;
+}
+
+h5{
+    word-spacing: 5px;
+}
+/* *** */
 .product{
     width:300px;
     padding: 1rem;

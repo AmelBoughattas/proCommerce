@@ -110,7 +110,7 @@ const HomeScreen = () => {
                             imageUrl={product.imageUrl}
                             productId={product._id}
                         />
-                    ))  /* .reverse() */
+                    )).reverse()
                 )}
 
 

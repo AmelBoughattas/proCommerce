@@ -10,7 +10,7 @@ import AddProduct from '../components/AddProduct';
 const ProfileAdminScreen = () => {
 
     const auth = useSelector(state => state.auth)
-    /*  const posts =useSelector(state => state.posts)  */
+  
 
     const dispatch = useDispatch()
     useEffect(() => {

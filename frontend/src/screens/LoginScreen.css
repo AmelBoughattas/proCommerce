@@ -10,10 +10,10 @@
 background-image: url('../Images/bg-logo.png');
 
 background-size:cover;
-/* height:100%; d-flex justify-content-center h-100 h-10 */
-padding:50px 0 50px 0;
+/* height:100%; d-flex justify-content-center h-100 h-10 signup */
+/* padding:50px 0 50px 0; card*/
 width: 100%;  
-min-height: 100vh;
+min-height: 75vh;
 display: -webkit-box;
 display: -webkit-flex;
 display: -moz-box;
@@ -28,7 +28,7 @@ background-size: cover;
 background-position: center;
 position: relative;
 z-index: 1;
-
+height: 40%;
 }
   
   .container1::before  {
@@ -47,7 +47,31 @@ z-index: 1;
     background: linear-gradient(left, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
     pointer-events: none;
   }
-/* Made with love by Mutiullah Samim*/
+.alert__Register{
+    margin-top:-150px
+}
+.succ__Register{
+    border:2px solid #f7d7da;
+    background:#f7d7da;
+   text-align: center;
+   padding:5px 0 0 0 ;
+    width:30rem;
+    color:#68283b;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.btn_reg{
+    margin-right: 10px;
+}
+/* .succ_Register{
+    border:2px solid #d383e7;
+    background:#f3cfb7;
+    border-radius: 20px;
+} */
+  .card-body__login{
+      margin-top:50px
+  }
+/* Made with love by Mutiullah Samim fab fa-facebook-square*/
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
@@ -59,7 +83,7 @@ z-index: 1;
 }
 .card{
 height: 370px;
-margin-top: -10rem;
+margin-top: 0rem;
 margin-bottom: auto;
 width: 400px;
 background-color: rgba(0,0,0,0.5) !important;

@@ -21,6 +21,7 @@ const AllProductScreen = () => {
   
   return (
     <div className="homescreenPro" >
+      
         <h2 className="homescreenPro__title"><span>Shop Computer & Accessories</span></h2>
        
         <div className="homescreenPro__products">
@@ -30,8 +31,12 @@ const AllProductScreen = () => {
           ) : error ? (
             <h3>{error}</h3>
           ) : (
+            
             products.map((product) => (
+           
               <Product
+            
+       
                 key={product._id}
                 name={product.name}
                 description={product.description}
@@ -39,7 +44,7 @@ const AllProductScreen = () => {
                 imageUrl={product.imageUrl}
                 productId={product._id}
               />
-            ))/* .reverse() */
+            )).reverse() 
           )}
         </div>
       </div>
