@@ -64,8 +64,8 @@ const HomeScreen = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>MayColl is an shopping</h3>
-                        <p>Which has stores of different technology</p>
+                        <h3>MayColl</h3>
+                        <p>Welcome to our website</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
