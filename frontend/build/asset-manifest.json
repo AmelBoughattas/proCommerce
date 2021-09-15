@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.90ec4461.chunk.css",
+    "main.js": "/static/js/main.4c16ef2c.chunk.js",
+    "main.js.map": "/static/js/main.4c16ef2c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a9f7fb20.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a9f7fb20.js.map",
+    "static/css/2.818011ed.chunk.css": "/static/css/2.818011ed.chunk.css",
+    "static/js/2.0d7d1dfa.chunk.js": "/static/js/2.0d7d1dfa.chunk.js",
+    "static/js/2.0d7d1dfa.chunk.js.map": "/static/js/2.0d7d1dfa.chunk.js.map",
+    "static/js/3.e67303bc.chunk.js": "/static/js/3.e67303bc.chunk.js",
+    "static/js/3.e67303bc.chunk.js.map": "/static/js/3.e67303bc.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.818011ed.chunk.css.map": "/static/css/2.818011ed.chunk.css.map",
+    "static/css/main.90ec4461.chunk.css.map": "/static/css/main.90ec4461.chunk.css.map",
+    "static/js/2.0d7d1dfa.chunk.js.LICENSE.txt": "/static/js/2.0d7d1dfa.chunk.js.LICENSE.txt",
+    "static/media/back.62280751.png": "/static/media/back.62280751.png",
+    "static/media/LoginScreen.css": "/static/media/bg-logo.9e3e50ee.png",
+    "static/media/chariotLogo.edf9c46d.png": "/static/media/chariotLogo.edf9c46d.png",
+    "static/media/ecoutteur.e79de92f.png": "/static/media/ecoutteur.e79de92f.png",
+    "static/media/labtop_2.71556566.png": "/static/media/labtop_2.71556566.png",
+    "static/media/manetteJeu.50136ec7.png": "/static/media/manetteJeu.50136ec7.png",
+    "static/media/watchBlack.b678dd51.png": "/static/media/watchBlack.b678dd51.png",
+    "static/media/watchWhite.e39c73e7.png": "/static/media/watchWhite.e39c73e7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a9f7fb20.js",
+    "static/css/2.818011ed.chunk.css",
+    "static/js/2.0d7d1dfa.chunk.js",
+    "static/css/main.90ec4461.chunk.css",
+    "static/js/main.4c16ef2c.chunk.js"
+  ]
+}
