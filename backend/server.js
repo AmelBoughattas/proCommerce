@@ -4,6 +4,7 @@ const connectDB =require('./helpers/db');
 const productRoutes = require("./routes/productRoutes");
 const cors = require('cors');
 const config = require('config'); 
+const path = require('path')
 
 require('dotenv').config();
 
@@ -25,7 +26,11 @@ app.use("/api/products", require('./routes/productRoutes'))
 
 app.use("/api/command",require('./routes/commandRouter'))
 
-
+//setup for deployment
+app.use(express.static(path.join(__dirname,'../','frontend','build')));
+app.get('*', (req,res)=>{
+    res.sendFile(path.join(__dirname,'../','frontend','build','index.html'));
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
