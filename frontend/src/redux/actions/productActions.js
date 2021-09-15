@@ -1,6 +1,6 @@
 
 import axios from "axios";
-import { prefixe } from '../../helpers/constants';
+/* import { prefixe } from '../../helpers/constants'; */
 import { setToken } from '../../helpers/helpers';
 import {UPDATE_PRODUCT_SUCCESS, ADD_PRODUCTS_REQUEST, ADD_PRODUCTS_SUCCESS, ADD_PRODUCTS_FAILED , GET_MY_PRODUCT_REQUEST, GET_MY_PRODUCT_SUCCESS,GET_MY_PRODUCT_FAILED,GET_PRODUCT_DETAILS_REQUEST,GET_PRODUCT_DETAILS_SUCCESS,GET_PRODUCT_DETAILS_FAILED, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_REQUEST, GET_PRODUCTS_FAILED, GET_PRODUCT_DETAILS_RESET, GET_PRODUCTS_COUNT_REQUEST, GET_PRODUCTS_COUNT_SUCCESS, GET_PRODUCTS_COUNT_FAILED, DELETE_PRODUCT_REQUEST, DELETE_PRODUCT_SUCCESS, UPDATE_PRODUCT_REQUEST, UPDATE_PRODUCT_FAILED, DELETE_PRODUCT_FAILED, SUCCESS} from '../constants/ProductConstants'
 
@@ -12,7 +12,7 @@ export const addProduct = (newProduct)=> async (dispatch) =>{
 
   try {
       setToken()
-      const {data} =await axios.post(`${prefixe}/api/product/addproduct`, newProduct)
+      const {data} =await axios.post(`/api/product/addproduct`, newProduct)
       dispatch({
           type:ADD_PRODUCTS_SUCCESS ,
           payload:data
@@ -73,7 +73,7 @@ export const getMyProduct = () => async (dispatch) => {
 try {
 
     setToken()
-    const { data } = await axios.get(`${prefixe}/api/product/myproduct`)
+    const { data } = await axios.get(`/api/product/myproduct`)
     dispatch({
         type: GET_MY_PRODUCT_SUCCESS,
         payload: data
@@ -93,7 +93,7 @@ catch (err) {
   dispatch({type:GET_PRODUCTS_COUNT_REQUEST})
 try {
     
-    const { data } = await axios.get(`${prefixe}/api/product/productcount`)
+    const { data } = await axios.get(`/api/product/productcount`)
     dispatch({
         type: GET_PRODUCTS_COUNT_SUCCESS,
         payload: data
@@ -145,7 +145,7 @@ export const getProductDetails = (id) => async (dispatch) => {
     try{
       console.log(id)
       setToken()
-      const {data} =await axios.delete(`${prefixe}/api/product/deleteproduct/${id}`)
+      const {data} =await axios.delete(`/api/product/deleteproduct/${id}`)
           dispatch({
           type:DELETE_PRODUCT_SUCCESS ,
           payload:data
@@ -180,7 +180,7 @@ export const getProductDetails = (id) => async (dispatch) => {
     dispatch({type:UPDATE_PRODUCT_REQUEST})
     try{
       setToken()
-      const {data} =await axios.put(`${prefixe}/api/product/updateProduct/${_id}`,{price:newPrice})
+      const {data} =await axios.put(`/api/product/updateProduct/${_id}`,{price:newPrice})
       dispatch({
         type:UPDATE_PRODUCT_SUCCESS,
         payload:data

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { prefixe } from "../../helpers/constants"
+/* import { prefixe } from "../../helpers/constants" */
 import {  ADD_CONTACT_FAILED, ADD_CONTACT_REQUEST, ADD_CONTACT_SUCCESS } from "../constants/contactConstants"
 
 
@@ -9,7 +9,7 @@ export const addContact = (newContact)=> async (dispatch) =>{
 
     try {
        
-        const {data} =await axios.post(`${prefixe}/api/contact`, newContact)
+        const {data} =await axios.post(`/api/contact`, newContact)
         dispatch({
             type:ADD_CONTACT_SUCCESS ,
             payload:data

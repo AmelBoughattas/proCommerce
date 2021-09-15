@@ -1,6 +1,6 @@
 import {LOGOUT, GET_PROFILE_FAILED, GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS, LOGIN_FAILED, LOGIN_REQUEST, LOGIN_SUCCESS, REGISTER_REQUEST, REGISTER_FAILED, REGISTER_SUCCESS, SUCCESS_REGISTER } from "../constants/authConstants"
 import axios from 'axios';
-import { prefixe } from "../../helpers/constants";
+/* import { prefixe } from "../../helpers/constants"; */
 import {setToken}from '../../helpers/helpers'
 import { getMyCommand } from "./commandActions";
 
@@ -10,7 +10,7 @@ import { getMyCommand } from "./commandActions";
 export const login = (info) => async (dispatch) =>{
    dispatch({type:LOGIN_REQUEST})
    try{
-   const res = await axios.post(`${prefixe}/api/user/login`,info)
+   const res = await axios.post(`/api/user/login`,info)
    dispatch({
        type: LOGIN_SUCCESS,
        payload : res.data
@@ -29,7 +29,7 @@ export const getProfile = () => async (dispatch)=> {
     dispatch({type:GET_PROFILE_REQUEST})
     try{
         setToken()
-        const {data} =await axios.get(`${prefixe}/api/user/getProfile`)
+        const {data} =await axios.get(`/api/user/getProfile`)
         dispatch({
             type:GET_PROFILE_SUCCESS,
             payload: data
@@ -49,7 +49,7 @@ export const getProfile = () => async (dispatch)=> {
 export const register = (info) => async (dispatch) =>{
     dispatch({ type:REGISTER_REQUEST })
     try{
-        const res = await axios.post(`${prefixe}/api/user/register`,info)
+        const res = await axios.post(`/api/user/register`,info)
         dispatch({
             type :REGISTER_SUCCESS,
             payload : res.data

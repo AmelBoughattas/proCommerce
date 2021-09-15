@@ -1,6 +1,6 @@
 import {  ADD_COMMAND_FAILED, ADD_COMMAND_REQUEST, ADD_COMMAND_SUCCESS, GET_MY_COMMAND_FAILED, GET_MY_COMMAND_REQUEST, GET_MY_COMMAND_SUCCESS } from "../constants/commandConstants"
 import axios from "axios";
-import { prefixe } from '../../helpers/constants';
+/* import { prefixe } from '../../helpers/constants'; */
 import { setToken } from '../../helpers/helpers';
 
 export const addCommand = (newCommand)=> async (dispatch) =>{
@@ -10,7 +10,7 @@ export const addCommand = (newCommand)=> async (dispatch) =>{
     try {
     
         setToken()
-        const {data} =await axios.post(`${prefixe}/api/command/addcommand`, newCommand)
+        const {data} =await axios.post(`/api/command/addcommand`, newCommand)
         dispatch({
             type:ADD_COMMAND_SUCCESS ,
             payload:data
@@ -34,7 +34,7 @@ export const getMyCommand = () => async (dispatch) => {
       setToken();
       dispatch({ type: GET_MY_COMMAND_REQUEST });
       
-      const { data } = await axios.get(`${prefixe}/api/command/getcommand`);
+      const { data } = await axios.get(`/api/command/getcommand`);
   
       dispatch({
         type: GET_MY_COMMAND_SUCCESS,

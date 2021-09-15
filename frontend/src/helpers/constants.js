@@ -1,1 +1,1 @@
-export const prefixe = 'http://localhost:5000'
+/* export const prefixe = 'http://localhost:5000' */
