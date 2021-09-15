@@ -38,10 +38,7 @@
 
 
 @media (max-width: 950px) {
-   /*  .homescreenPro{
-       
-     }
-  */
+  
     .homescreenPro__products{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -49,9 +46,7 @@
 
 
 @media (max-width: 630px) {
-   /*  .homescreenPro{
-        
-     } */
+   
     .homescreenPro__products{
         grid-template-columns: 1fr;
     }

@@ -5,12 +5,15 @@
   height:1360px;
   border-radius: 6px;
   box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  background:url('https://images.unsplash.com/photo-1547414899-d54e6aeb03e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: fixed;
+  font-weight: bold;
 }
 /* Paypal button*/
 .paypalBtn{
 position:sticky;
-
-
 }
 
 .cartscreen h2{
@@ -41,7 +44,7 @@ position:sticky;
 
 .cartscreen__right{
  flex: 0.3;
- background: #fff;
+ background: transparent;
  box-shadow: 0 1px 4px rgba(0,0,0,0.4);   
  height: fit-content;
  margin-right: 30px;

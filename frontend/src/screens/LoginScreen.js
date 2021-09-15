@@ -9,6 +9,7 @@ import { getProfile, login, register } from '../redux/actions/authActions';
 
 const LoginScreen = () => {
 
+    const [value,setValue]=useState()
     //Partie Login
     const [info, setInfo] = useState({
         email: "",
@@ -26,7 +27,6 @@ const LoginScreen = () => {
 
     const history = useHistory() // contient les fontions de navigationqui permet de naviguer entre les pages
     useEffect(() => {
-      /*   dispatch(getProfile()) */
       if(auth.isAuth){
         dispatch(getProfile())
     }
@@ -49,7 +49,9 @@ const LoginScreen = () => {
     const handleRegister = (e) => {
         e.preventDefault()
         dispatch(register(info2))
-    }
+        setValue("");
+    }  
+ 
 
     /* success */
     const success_register = useSelector(state => state.auth.success_register) 
@@ -67,9 +69,11 @@ const LoginScreen = () => {
                     ) : ''
                 }
             </div>  
-            <div className="d-flex justify-content-center h-100 h-10">
+            <div className="d-flex justify-content-center h-100 h-10 cardds">
+                
+                
                 {/* -------------------------------------REGISTER------------------------------------- */}
-                <div className="card">
+                <div className="card card_register">
                     <div className="card-header">
                         <h3>Register</h3>
 
@@ -80,28 +84,27 @@ const LoginScreen = () => {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><i className="fas fa-user"></i></span>
                                 </div>
-                                <input className="form-control" required type="firstname" placeholder="First name" autofocus onChange={(e) => setInfo2({ ...info2, firstname: e.target.value })}></input>
+                                <input className="form-control" required type="firstname" value={value} placeholder="First name" autofocus onChange={(e) => setInfo2({ ...info2, firstname: e.target.value })}></input>
                             </div>
                             <div className="input-group form-group">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><i className="fas fa-user"></i></span>
                                 </div>
-                                <input className="form-control" required type="lastname" placeholder="Last name" onChange={(e) => setInfo2({ ...info2, lastname: e.target.value })}></input>
+                                <input className="form-control" required type="lastname" value={value} placeholder="Last name" onChange={(e) => setInfo2({ ...info2, lastname: e.target.value })}></input>
                             </div>
                             <div className="input-group form-group">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><i className="fas fa-user"></i></span>
                                 </div>
-                                <input className="form-control" required type="email" placeholder="account@domain.ext" autofocus onChange={(e) => setInfo2({ ...info2, email: e.target.value })}></input>
+                                <input className="form-control" required type="email" value={value} placeholder="account@domain.ext" autofocus onChange={(e) => setInfo2({ ...info2, email: e.target.value })}></input>
                             </div>
                             <div className="input-group form-group">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text"><i className="fas fa-key"></i></span>
                                 </div>
-                                <input className="form-control" required type="password" placeholder="***********" onChange={(e) => setInfo2({ ...info2, password: e.target.value })}></input>
+                                <input className="form-control" required type="password" value={value} placeholder="***********" onChange={(e) => setInfo2({ ...info2, password: e.target.value })}></input>
                             </div>
                             <div className="form-group">
-                                <button type="reset" className="btn float-right login_btn" >Reset</button>
                                 <button type="submit" className="btn float-right login_btn btn_reg" >Register</button>    
                             </div>
                         </form>
@@ -117,13 +120,12 @@ const LoginScreen = () => {
                 {/* -------------------------------------LOGIN------------------------------------- */}
 
                 <div class="d-flex justify-content-center h-100">
-                    <div class="card">
+                    <div class="card card_login">
                         <div class="card-header">
                             <h3>Sign In</h3>
                             <div className="d-flex justify-content-end social_icon">
                                 <span><i class="fas fa-laptop"></i></span>
-                                <span><i class="fas fa-watch"></i></span>{/* 
-                                <span> <i class="fab fa-instagram"></i></span> */}
+                                <span><i class="fas fa-watch"></i></span>
                             </div>
                         </div>
                         <div class="card-body">

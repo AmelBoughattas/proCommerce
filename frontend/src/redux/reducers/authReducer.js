@@ -11,7 +11,7 @@ const initState ={
     errors:null,
     /* success */
     success_register:false,
-    //command
+  
    
 }
 
@@ -60,8 +60,7 @@ const authReducer = (state= initState, {type,payload}) =>{
                         ...state.user,
                         cmdList:payload
                     }, 
-                    //command
-                    //cmdList:payload
+                
 
                 }
 

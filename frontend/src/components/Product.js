@@ -1,7 +1,6 @@
-import "./Product.css";
+/* import "./Product.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-/* import { DeleteOutlined,EditOutlined } from '@ant-design/icons'; */
 import { useState } from "react";
 import { deleteProduct, getProducts, updateProduct } from "../redux/actions/productActions";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,37 +8,22 @@ import { Modal, Button, DropdownButton, Dropdown } from "react-bootstrap";
 
 const Product = ({ imageUrl, description, price, name, productId, product }) => {
 
-    /*  ----------------DELETE-----------------------  */
     const dispatch = useDispatch()
     const handleDelete = (e) => {
         e.preventDefault()
         dispatch(deleteProduct(productId))
-        dispatch(getProducts())
+        
     };
 
 
-    /*  ------ editer price-----*/
+  
     const [edit, setEdit] = useState(true)
     const [newPrice, setNewPrice] = useState(price);
 
-   /*  const startedit = () => {
-        setEdit(false)
-        setNewPrice({
-            ...newPrice,
-            price: price
-        })
-    } */
-
+  
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(updateProduct(productId,))
-        dispatch(getProducts())
-
-        setNewPrice({
-            ...newPrice,
-            price: ""
-        })
-        setEdit(true)
+        dispatch(updateProduct(productId,newPrice))
     }
     const [show, setShow] = useState(false);
 
@@ -54,16 +38,15 @@ const Product = ({ imageUrl, description, price, name, productId, product }) => 
         <div className="product">
 
             {user && user.role === 'admin' &&
-                <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                    <Dropdown.Item href="#/action-1" onClick={handleDelete}>delete</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2" onClick={handleShow}  >edit</Dropdown.Item>
+                <DropdownButton className="DropDown" id="dropdown-basic-button" title="">
+                    <Dropdown.Item href="#/action-1" onClick={handleDelete}>Supprimer</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2" onClick={handleShow}  >Modifier</Dropdown.Item>
                 </DropdownButton>
 
-              /*   <DeleteOutlined style={{width:"20px", height:"20px"}} onClick={handleDelete} />
-      */       }
+             }
 
 
-            <img src={imageUrl && imageUrl.url} alt={name} />
+            <img className="info__image" src={imageUrl && imageUrl.url} alt={name} />
             <div className="product__info">
 
                 <p className="info__name">{name}</p>
@@ -71,7 +54,7 @@ const Product = ({ imageUrl, description, price, name, productId, product }) => 
                     {description.substring(0, 100)}...
                 </p>
 
-                {/* EDIT PRICE */}
+           
 
                 {edit ? (<>
 
@@ -99,7 +82,7 @@ const Product = ({ imageUrl, description, price, name, productId, product }) => 
 
                     </Modal>
                 </>) :
-                    (
+                    (    
                         < p className="info__price" > {price} TND</p>
                     )
 
@@ -117,3 +100,4 @@ const Product = ({ imageUrl, description, price, name, productId, product }) => 
 }
 
 export default Product
+ */

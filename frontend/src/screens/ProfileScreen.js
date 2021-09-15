@@ -3,7 +3,6 @@
   import { useDispatch, useSelector} from 'react-redux';
 import CommandList from '../components/CommandList';
 import { getMyCommand } from '../redux/actions/commandActions';
-/* import ProductHistory from '../components/ProductHistory'; */
 
 const ProfileScreen = () => {
 
@@ -11,13 +10,11 @@ const ProfileScreen = () => {
      
      const commandList = useSelector(state=>state.auth.user.cmdList)
      
-     
      const dispatch = useDispatch()
-
-      useEffect(() => {
-        dispatch(getMyCommand())
-     }, [dispatch]) 
-
+     
+     useEffect(() => {
+      dispatch(getMyCommand())
+   }, [])
 
 
     return (
@@ -25,12 +22,7 @@ const ProfileScreen = () => {
           <h1 className="title_profile">
           liste des Comandes {auth.user && auth.user.firstname}
          </h1>
-
-                 
-         <CommandList  commandList={commandList} />
-
-       
-         
+         <CommandList  commandList={commandList}  className="cmd"/>
        </div> 
 
         

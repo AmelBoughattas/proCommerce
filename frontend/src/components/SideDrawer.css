@@ -46,11 +46,6 @@ color: #f4f4f4;
 }
 
 .navSignsous{
-  /* padding: 20px 0 20px 130px;
-  text-decoration: none;
-  color: #171717;
-  font-size:1.6rem;
-  text-align: center; */
   display: flex;
     align-items: center;
     justify-content: center;

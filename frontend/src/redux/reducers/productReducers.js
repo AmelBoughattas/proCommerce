@@ -24,9 +24,7 @@ export const getProductsReducer = (state = { products: [], success:false }, acti
           return {
             ...state,
             success:action.payload
-          }
-      
-       
+          }       
       default:
         return state;
     }
@@ -52,6 +50,7 @@ export const getProductsReducer = (state = { products: [], success:false }, acti
         return {
           product: {},
         };
+        
      
 
       default:
@@ -59,15 +58,3 @@ export const getProductsReducer = (state = { products: [], success:false }, acti
     }
   };
    
-/*   export  const ProductReducer = (state = { product: {} }, {type,payload}) =>{
-    switch (type) {
-      case actionTypes.UPDATE_PRODUCT_SUCCESS:
-        return {
-          ...state,
-          product:state.product.map(el=>el.id===payload.id? payload : el)
-        }             
-
-       default: 
-      return state;
-    }
-  }    */

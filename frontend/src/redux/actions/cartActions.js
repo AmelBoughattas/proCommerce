@@ -28,14 +28,3 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
     localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
   };
 
-/*   export const clearCart =()=>{
-    return {
-      type:actionTypes.CLEAR_CART
-    }
-  } */
-  
- /*  export const clear=()=>{
-    return{
-      type:actionTypes.CLEAR_CART
-    }
-  } */

@@ -2,10 +2,8 @@ import {LOGOUT, GET_PROFILE_FAILED, GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS, LO
 import axios from 'axios';
 import { prefixe } from "../../helpers/constants";
 import {setToken}from '../../helpers/helpers'
-/* import { getMyPosts } from "./postActions"; */
-import { getMyProduct } from "./productActions";
-/* import { getMyCommand } from "./commandActions"; */
-//info contient email e password
+import { getMyCommand } from "./commandActions";
+
 
 
 
@@ -18,7 +16,6 @@ export const login = (info) => async (dispatch) =>{
        payload : res.data
    })  
    dispatch (getProfile())
-   //dispatch(getMyCommand())
 } catch (err) {
     dispatch({
         type:LOGIN_FAILED,
@@ -37,7 +34,8 @@ export const getProfile = () => async (dispatch)=> {
             type:GET_PROFILE_SUCCESS,
             payload: data
         })
-         dispatch(getMyProduct())
+       
+    dispatch(getMyCommand())
     }
     catch (err){
         dispatch({
@@ -56,12 +54,12 @@ export const register = (info) => async (dispatch) =>{
             type :REGISTER_SUCCESS,
             payload : res.data
         })
-       /*  window.alert("Register Success")  */
-           /* success */
+      
       setTimeout(() => {
         dispatch({
             type: SUCCESS_REGISTER,
-            payload: 'Register added with success'
+            payload: 'Register added with success',
+          
         })
     }, 1000)
     

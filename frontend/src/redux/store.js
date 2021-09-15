@@ -6,15 +6,13 @@ import { cartReducer } from "./reducers/cartReducers";
 import { getProductsReducer, getProductDetailsReducer} from "./reducers/productReducers";
 import authReducer from "./reducers/authReducer";
 
-/* import postReducer from "./reducers/postReducer";
- */
+
 const reducer = combineReducers({
   cart: cartReducer,
   getProducts: getProductsReducer,
   getProductDetails: getProductDetailsReducer,
   auth: authReducer,
   
- /*  product: ProductReducer */
   });
   
   const middleware = [thunk];

@@ -11,7 +11,6 @@ const addProduct = async (req, res) => {
       price,
       countInStock,
       categorie,
-      /* owner : req.userId */
     })
     if (imageUrl) {
       const savedImage = await cloudinary.uploader.upload(imageUrl, {
@@ -25,8 +24,9 @@ const addProduct = async (req, res) => {
 
     }
     const savedProduct = await newProduct.save()
-    /* console.log(savedProduct) */
-    res.json(savedProduct)
+  
+    res.json({savedProduct,msg:"Product added successfully"})
+    
   } catch (err) {
     res.status(400).json({ err: err.message })
   }

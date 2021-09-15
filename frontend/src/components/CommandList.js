@@ -32,12 +32,11 @@ const CommandList = ({ commandList }) => {
         <div className="containerCmd">
             {list().map((el, i) => {
                 return <>
-                    {/* <div  style={{border:'solid black 1px', margin:"3px"}} > */}
                     <div className="CommandList">
                         <div className="commandList__ligne">
-                            <h5 /* className="pic" */> {` ${i + 1}`}</h5>
+                            <h5> {` ${i + 1}`}</h5>
 
-                            <img src={chariotLogo} alt="logo" style={{ width: "50px", height: "50px", marginTop: "-10px" }} />
+                            <img src={chariotLogo} alt="logo" style={{ width: "50px", height: "50px", marginTop: "-10px"}} />
 
                         </div>
                         <div>
@@ -47,12 +46,7 @@ const CommandList = ({ commandList }) => {
                     </div>
                 </>
             })}
-            {/* {list().map((el,i) => 
-             commandList.filter(elm=>elm.cartId===el).map((commands)=><><h3>{`commande numero : ${el}`}<CartCommande key={commands._id} command={commands} /></h3></>  )
-               
-           )   
-            
-            }  */}
+          
 
 
         </div>

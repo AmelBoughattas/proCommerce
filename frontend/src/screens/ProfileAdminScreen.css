@@ -1,18 +1,14 @@
 .profileAdmin{
     margin: 10rem auto;
-background: transparent;
+    background: transparent;
     max-width: 1300px;
     border-radius: 6px;
     box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
-    padding-top:30px
+
+    background-attachment: fixed;
 }
-/* .profileAdmin__form{
-    margin-top:20px
-} */
+
 .profileAdmin h1 {
-    /*  margin:0px 0 0px 100px; 
-     padding-top:20px; container1*/
-    
     font-family: 'Dancing Script', cursive;
     font-size: 28px;
     font-weight: 300;
@@ -22,4 +18,42 @@ background: transparent;
      margin-bottom: -80px; 
     margin-left:50px;
     color:white
+}
+@media (max-width: 1285px) {
+   
+    .h1_{
+        margin-left: 50px!important;
+        margin-left:-20px
+    }
+}
+@media (max-width:1000px){
+    .h1_{
+        display:none
+    }
+}
+/********* */
+@media (max-width:1360px){
+    .profileAdmin{
+        margin: 10rem 30px 10rem 30px;
+    }
+}
+@media (max-width:980px){
+    .profileAdmin{
+        margin: 10rem 20px 10rem 20px;
+    }
+}
+/* -------------------------- */
+@media (max-width:740px){
+  
+}
+
+@media (max-width:720px){
+    .profileAdmin{
+        margin: 10rem 25px 10rem 25px;
+    }
+    .h1_{
+        margin-bottom: -80px; 
+        margin-left:50px;
+        color:white
+    }
 }

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // Components
-import Product from "../components/Product";
+import Prod from "../components/Prod";
 
 //Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
@@ -22,7 +22,7 @@ const AllProductScreen = () => {
   return (
     <div className="homescreenPro" >
       
-        <h2 className="homescreenPro__title"><span>Shop Computer & Accessories</span></h2>
+        <h1 className="homescreenPro__title"><span>Shop Computer & Accessories</span></h1>
        
         <div className="homescreenPro__products">
 
@@ -34,9 +34,7 @@ const AllProductScreen = () => {
             
             products.map((product) => (
            
-              <Product
-            
-       
+              <Prod
                 key={product._id}
                 name={product.name}
                 description={product.description}

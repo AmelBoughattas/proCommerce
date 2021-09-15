@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+/* const mongoose = require('mongoose')
 const moment = require('moment-timezone')
 
 const postSchema = mongoose.Schema({
@@ -20,4 +20,4 @@ const postSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('post', postSchema)
+module.exports = mongoose.model('post', postSchema) */

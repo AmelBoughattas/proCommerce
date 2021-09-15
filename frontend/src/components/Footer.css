@@ -1,5 +1,4 @@
 
- /*  height: 110px; */
 .footer{
    width: 100%;
   background-color: #0d0e0d;
@@ -19,8 +18,6 @@
 
 .icon {
    text-align: center;
-  /*   height:auto; */
-    
 }
  a{
     color: rgb(230, 176, 212)

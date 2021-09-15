@@ -1,4 +1,4 @@
-const router = require('express').Router();
+/* const router = require('express').Router();
 const postController =require('../controller/postController')
 const {tokenMiddleware, checkAdmin} =require('../middleware/tokenMiddleware')
 
@@ -8,4 +8,4 @@ router.delete('/deletepost/:id',tokenMiddleware,checkAdmin, postController.delet
 router.post('/addpost', tokenMiddleware, postController.addPost)
 router.put('/updatepost/:id',tokenMiddleware,checkAdmin, postController.updatePost)
 
-module.exports = router
+module.exports = router */

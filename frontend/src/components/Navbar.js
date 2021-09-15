@@ -1,4 +1,4 @@
-import "./Navbar.css"; 
+ import "./Navbar.css";  
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/authActions";
@@ -16,13 +16,13 @@ const Navbar = ({ click }) => {
   const getCartCount = () => {
     return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
   };
-  // End chariot cart navbar
+  // End chariot cart navbar fas
 
 
 
   return (
     <nav className="navbar">
-      <div className="navbar__logo2 ">
+      <div className="navbar__logo2">
         <div className="bd">
           <div class="sign sign1 words word-1" >
            
@@ -34,13 +34,7 @@ const Navbar = ({ click }) => {
             <span class="fast-flicker1 ">l</span>
             <span class="fast-flicker1 ">l</span>
             <span class="fast-flicker1 "><img src={chariotLogo} alt="logo" style={{width:"50px" ,height:"50px", marginTop:"-10px"}}/></span>
-           {/*  <div className="part1">
-             
-              <span class="flicker1 ">  In &nbsp;</span>
-            </div>
-            <div className='part2 '>
-              <span>Shopping</span>
-            </div> */}
+          
           </div>
 
         </div>

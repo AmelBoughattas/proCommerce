@@ -21,7 +21,6 @@ const createdAt= moment(Date.now()).tz('Europe/Paris').format('LLLL')
     user.commandeList.push(cartId)
      await user.save()
   
-    /* console.log(savedProduct) */
     res.json(cart)
   } catch (err) {
     res.status(400).json({ err: err.message })

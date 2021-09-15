@@ -21,7 +21,7 @@ app.use('/api/product',require('./routes/productRoutes'))
 app.use('/api/contact', require('./routes/contactRoute'))
 
 //pagination
-  app.use("/api/products", require('./routes/productRoutes'))   
+app.use("/api/products", require('./routes/productRoutes'))   
 
 app.use("/api/command",require('./routes/commandRouter'))
 

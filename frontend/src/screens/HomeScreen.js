@@ -3,7 +3,7 @@ import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // Components
-import Product from "../components/Product";
+import Product from "../components/Prod";
 
 
 //Actions
@@ -39,8 +39,8 @@ const HomeScreen = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>MAYCOLL</h3>
+                        <p>Welcome in website MAYCOLL</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -52,8 +52,8 @@ const HomeScreen = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Welcom Maycoll</h3>
+                        <p>We have best technology</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -64,8 +64,8 @@ const HomeScreen = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h3>MayColl is an e-commerce</h3>
+                        <p>Which has stores of different technology</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -76,8 +76,8 @@ const HomeScreen = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>MAYCOLL</h3>
+                        <p>We have best technology</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -87,13 +87,13 @@ const HomeScreen = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>MayColl is an e-commerce</h3>
+                        <p>Best technology with the best price</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel> 
 
-   {/*          <h2 className="homescreen__title">Welcome</h2> */}
+ 
             <div className="homescreen__products">
 
                 {loading ? (

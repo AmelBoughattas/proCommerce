@@ -1,5 +1,6 @@
+/* 
 .priceContainer{
-    display: flex;
+    display: flex;    
     border: 1px solid black;
     width: auto;
     justify-content: center;
@@ -12,10 +13,11 @@
     height:50px;
     align-items: center;
     border: none;
-    
-
 }
-
+.DropDown{
+    margin-top:-15px;
+    margin-bottom: -40px;
+}
 .price{
     width: 300px;
     font-family: 'Anton', sans-serif;
@@ -35,7 +37,7 @@
 h5{
     word-spacing: 5px;
 }
-/* *** */
+
 .product{
     width:300px;
     padding: 1rem;
@@ -53,6 +55,7 @@ h5{
     height: 60%;
     object-fit: contain;
     border-radius: 8px;
+    margin-bottom: -30px;
   }
   .product__info >p{
       margin-bottom: 8px;
@@ -62,9 +65,10 @@ h5{
       font-weight: bold;
   }
   
-  .info-name { 
+  .info__name { 
       font-size: 1rem;
       overflow: hidden;
+      margin-top:-50px
   }
   
   .info__description{
@@ -139,4 +143,4 @@ h5{
       .product{
           width:300px;
       }
-     }
+     } */

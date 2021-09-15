@@ -1,6 +1,4 @@
 import './App.css';
-
-import { useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Screens
@@ -22,10 +20,11 @@ import PrivateRoute from './privateRoutes/PrivateRoute';
 import AllProductScreen from './screens/AllProductScreen';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { useState } from 'react';
 
 
 function App() {
-
+ 
 
   const [sideToggle, setSideToggle] = useState(false);
 
@@ -41,15 +40,14 @@ function App() {
         <Switch>
  
           <Route exact path="/" component={HomeScreen} />
-           <Route exact path="/product" component={AllProductScreen} /> 
+          <Route exact path="/product" component={AllProductScreen} /> 
           <Route exact path="/product/:id" component={ProductScreen1} />
           <Route exact path="/cart" component={CartScreen} />
           <Route exact path="/login"  component={LoginScreen} />
           <Route  exact path="/contact"  component={Contact}/> 
           <PrivateRoute exact path="/profile"  component={ProfileScreen} ></PrivateRoute>
           <PrivateAdminRouter exact path="/profileAdmin"  component={ProfileAdminScreen} ></PrivateAdminRouter> 
-         
-       {/*    <Route exact path="/Paypal" component={Paypal} /> */}
+
         </Switch>
       </main>
       <Footer/>

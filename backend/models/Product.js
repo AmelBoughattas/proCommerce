@@ -3,16 +3,16 @@ const moment = require('moment-timezone');
 
 const productSchema = mongoose.Schema({
   name: {
-    type: String,/* 
-    required: true, */
+    type: String,
+    required:true,
   },
   imageUrl:{
     type:mongoose.Schema.Types.Mixed,
-
+     required:true
 },
   description: {
     type: String,
-  /*   required: true, */
+    required:true,
   },
   price: {
     type: Number,
@@ -43,4 +43,4 @@ createdAt: {
 
 module.exports = mongoose.model("product", productSchema);
 
-/* module.exports = Product; */
+

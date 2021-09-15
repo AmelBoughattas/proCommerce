@@ -1,3 +1,5 @@
+
+
 .cartitem{
   width: 100%;
   padding: 1rem;
@@ -5,19 +7,20 @@
   display: grid;
   grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
   gap:8px;
-  background:#fff;
+  background:transparent;
   border-radius: 2px;
   place-items: center;
+  border-radius:0 5%/ 20% 50% ; 
   
+  box-shadow: 6px 2px 5px 3px rgb(206, 206, 206);
 }
 /* imageUrl */
 .cartitem__img__add {
   width: 30%;
   height: 100%;
   object-fit:cover;
-  
+  border-radius: 10px;
   -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
-  
   transform-origin:center;
   transform:perspective(800px) rotateY(25deg);
   transition:0.5s;

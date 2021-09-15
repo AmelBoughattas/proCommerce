@@ -3,26 +3,21 @@ import CartItem from '../components/CartItem';
 import { useSelector, useDispatch } from "react-redux";
 import { Link   } from "react-router-dom";
 
-/*  import {useState} from 'react'; */
-
 /* Paypal */
 import { PayPalButton } from "react-paypal-button-v2";
 
 // Actions
-import { addToCart, /* clearCart,  */removeFromCart } from "../redux/actions/cartActions";
+import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 import { addCommand } from '../redux/actions/commandActions';
-/* import { useState } from 'react'; */
+
 
 import swal from 'sweetalert'
 
 const CartScreen = () => {
 
-  /* PAY PAL */ 
-/*   const [checkout, setCheckout] = useState(false) */
 
   const dispatch = useDispatch();
-  /*1 */
-/*    const history=useHistory()  *//*1 clear */
+
 
   const cart = useSelector((state) => state.cart);
 
@@ -46,28 +41,13 @@ const CartScreen = () => {
       .reduce((price, item) => price + item.price * item.qty, 0)
       .toFixed(2);
   };
-    /*1 -> localStorage ->histrory*/
+    
   const newCommand=()=>{
    dispatch(addCommand(cart.cartItems)) 
    
-   /* clear cart  */
-   /* localStorage.clear()
-   dispatch(clearCart())
-   history.push('/') */
+  
   }
  
-  //Payement
-  /* 
-    const [payement, setPayement] = useState(false) */
-
-  /*1 const handlePayment = ()=>{
-    localStorage.clear()
-    dispatch(clearCart())
-    history.push('/')
-  } */
- 
- /* paypal metho 2 */
-/*  const [state, setState]=useState(0); */
  const auth = useSelector((state) => state.auth);
   return (
     <>
@@ -78,7 +58,7 @@ const CartScreen = () => {
           {cartItems.length === 0 ? (
             <div className="cartscreen__back"> 
              <img className="cartscreen__back__img" src="https://i.imgur.com/dCdflKN.png" alt="" width="200" height="200"  />
-                Votre panier est vide <br/>Ajoutez quelque chose pour me faire plaisir :) <br/> <Link to="/"><span style={{fontWeight:'bold'}}>Go Back</span></Link>
+             Your Cart Is Empty<br/>Add something to make me happy :) <br/> <Link to="/"><span style={{fontWeight:'bold'}}>Go Back</span></Link>
             </div>
           ) : (
             cartItems.map((item) => (
@@ -110,27 +90,15 @@ const CartScreen = () => {
         }
          amount={getCartSubTotal()}
           onSuccess={(details, data) => {
-          /*   swal("Good job!","Success, Transaction completed by " + details.payer.name.given_name); */
+         
           swal("Success, Transaction completed by " + details.payer.name.given_name);
-         /*  alert("Transaction completed by " + details.payer.name.given_name); */
+         
 
          console.log({details: data})
         }}
       /></div>
       :<Link to="/login" />  }
          
-        {/* Paypal  meth1*/}
-       {/*  {checkout ? (
-        <Paypal amount={getCartSubTotal()} />
-      ) : (
-        <button
-          onClick={() => {
-            setCheckout(true);
-          }}
-        >
-          Pay
-        </button>
-      )} */}
                 
           </div>
         </div>

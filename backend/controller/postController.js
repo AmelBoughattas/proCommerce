@@ -1,6 +1,6 @@
-const Post = require('../models/Post');
+/* const Post = require('../models/Post');
 const cloudinary = require('../helpers/cloudinary')
-/* const cloudinary = require('cloudinary') */
+
 
 
 const addPost = async(req,res) =>{
@@ -16,7 +16,7 @@ const addPost = async(req,res) =>{
             timeout:6000,
             upload_preset:"galery"
         })
-       /*  console.log(savedImage) */
+      
          newPost.image ={
              url:savedImage.url,
              public_id :savedImage.public_id
@@ -75,4 +75,4 @@ const updatePost = async(req, res)=>{
     }
 }
 
-module.exports = {getAllPosts, getMyPosts, addPost, updatePost, deletePost}
+module.exports = {getAllPosts, getMyPosts, addPost, updatePost, deletePost} */

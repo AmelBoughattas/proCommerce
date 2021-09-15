@@ -1,24 +1,23 @@
 .containerCmd{
-    margin-top: 20px;
+width: 100%
 }
 .CommandList{
     display:flex;
     border-radius:  0 10%/ 20% 50% ;
     box-shadow: 6px 2px 5px 3px rgb(206, 206, 206);
-    margin:30px;
-
+    margin:3px 20px 20px 3px ;
     font-family: 'Dancing Script', cursive; 
-    background:white
+    background:white;
+   background-image:url('https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80')!important;
+   background-size: cover;
+   background-attachment: fixed;
+
 }
 .commandList__ligne{
     display:block;
-
-  /*   float:left; */
- 
     margin-top:15px!important;
     margin-left:10px;
-    
-  
+    margin-right:40px; 
     -webkit-animation: mover 2s infinite  alternate;
     animation: mover 1s infinite  alternate;
 }
@@ -51,113 +50,39 @@ border-bottom: 20%/10%;
 
 }
 
-
-/* /* .CommandList{
-    border:2px solid black;
-    border-radius: 10px;
-    margin:0 20px 20px 20px
+@media (min-width:1360px){
+   .CommandList{
+   margin:5px  100px 15px 100px
+   }
 }
-
-.commandList__ligne {
-    display:flex;
-    color:red;
-    font-size: 20px;
-    font-family: 'Dancing Script', cursive; 
-    margin:5px 0 0 20px;
+@media (min-width:1159px){
+   .CommandList{
+      
+       margin:5px 100px 15px 100px
+       }
 }
-.total {
-    margin-left:80%;
-   color:red;   
-   font-size: 20px;
-   font-family: 'Dancing Script', cursive; 
-} *//* End style cart Avout us */
-/*
-.containerCmd{
-    background:rgb(68, 68, 64);
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-}    
-.CommandList{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    list-style: none;
-    box-shadow: 6px 2px 5px 3px rgb(206, 206, 206);
-    transition: transform .2s;
-    font-family: Josefin Slab; 
-    font-size: medium;
-    line-height: 30px;
-    height: auto;
-    padding: 5px;
-    color: black;
-    opacity: 80%;
-    border-radius: 10px;
-    margin-left: 50px;
-    background:green;
-
+@media (min-width: 800px) and (max-width:940px) {
+   .total{
+     margin-left:20px
+   }
 }
-
-.CommandList:hover {
-     transform: scale(1.1) 
-}
-
-.titleCmd{
-    border-radius: 100%;
-  box-shadow: 0 0 50px #ccc;
-  height:70px;
-  padding-top:20px
-
-}
- */
-/* .containerCmd{
-  display: flex;
- flex-direction: column;
- flex-wrap: wrap;
- text-align: center; */
-/*  background-image: url('https://th.bing.com/th/id/R413fd116a2a6382081eecfe0b344d15d?rik=eQmR%2bJdQr7dGtA&riu=http%3a%2f%2fhdlatestwallpaper.com%2fwp-content%2fuploads%2f2017%2f10%2fClear-sky-HD-Wallpaper.jpg&ehk=lvIMh3pQq4SegpVNuDAvIm1B4axcZwSmokaFUUrt0CI%3d&risl=&pid=ImgRaw');
- background-repeat: no-repeat;
- background-size: cover; 
- 
-    
- }*/
- /*.CommandList {
-    
-     list-style: none;
-    box-shadow: 6px 2px 5px 3px rgb(206, 206, 206);
-    transition: transform .2s;
-    font-family: Josefin Slab; 
-    font-size: medium;
-    line-height: 30px;
-    padding: 5px;
-    color: black;
-    opacity: 80%;
-    border-radius: 10px;
-    height:auto 
-}*/
-/*h5{
-     list-style: none;
-    box-shadow: 6px 2px 5px 3px rgb(206, 206, 206);
-    transition: transform .2s;
-    font-family: Josefin Slab; 
-    font-size: medium;
-    line-height: 30px;
-    padding: 5px;
-    color: black;
-    opacity: 80%;
-    border-radius: 10px;
-    height:auto;
-    width:auto;
-    border-radius: 50%; */
-  /*   box-shadow: 0 0 50px #ccc; */
-  
-/*}-*/
-/* 
-h5:hover {
-    transform: scale(1.5)
-} */
-/* .pic{
-    float: left;
-    margin-bottom: 5px;
-}  */
-
+@media (min-width: 700px) and (max-width:800px) {
+    .total{
+       margin-left:20px
+    }
+ }
+ @media (min-width: 600px) and (max-width:700px) {
+    .total{
+       margin-left:20px
+    }
+ }
+ @media (min-width: 570px) and (max-width:600px) {
+    .total{
+       margin-left:20px
+    }
+ }
+ @media (min-width: 500px) and (max-width:570px) {
+    .total{
+       margin-left:20px
+    }
+ }

@@ -1,0 +1,559 @@
+
+.product{
+  width:300px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  margin: 8px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+ .img-wrapper
+{
+  width: 100%;
+  height:100%;
+	position: relative;
+	overflow: hidden;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: -30px;
+} 
+
+.img-wrapper:before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 180%;
+	height: 100%;
+	width: 100%;
+	background: rgba(255,255,255,.3);
+	z-index: 1;
+	transform: skew(45deg);
+	transition: .5s;
+}
+
+.img-wrapper:hover:before
+{
+	left: -180%;
+}
+
+.img-wrapper img
+{
+/* 	height: 400px; */
+	/* width: 300px; */
+	filter: grayscale(100%);
+	transition: 2s;
+}
+.img-wrapper:hover img
+{
+	filter: grayscale(0%);
+	transform: scale(1.1);
+}
+
+.img-wrapper h2 
+{
+	background: tomato;
+	font-family: Poppins;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 10px 0;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	transform: perspective(400px) rotateY(90deg);
+	transform-origin: right;
+	transition: 1s;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.img-wrapper:hover h2
+{
+	transform: perspective(400px) rotateY(0deg);
+}
+.img-wrapper p{
+  background: tomato;
+	font-family: Poppins;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+  margin: 0;
+	padding-top:10px 0 ;
+  top:0;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	transform: perspective(400px) rotateY(90deg);
+	transform-origin: right;
+	transition: 1s;
+  font-size: 20px;
+  font-weight: 300;
+}
+.img-wrapper:hover p{
+  transform: perspective(400px) rotateY(0deg);
+
+}
+
+.img-wrapper ul
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background: rgba(255,255,255,0);
+}
+
+.img-wrapper ul li , .info__price
+{
+	background: #333;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	line-height: 40px;
+	transform: perspective(800px) rotateY(90deg);
+	transition: .5s;
+	transform-origin: left;
+}
+
+.img-wrapper:hover ul li 
+{
+	transform: perspective(800px) rotateY(0deg);
+}
+
+.img-wrapper:hover ul li:nth-child(1)
+{
+	transition-delay: .2s;
+}
+
+.img-wrapper:hover ul li:nth-child(2)
+{
+	transition-delay: .6s;
+}
+
+.img-wrapper:hover ul li:nth-child(3)
+{
+	transition-delay: .8s;
+}
+
+.img-wrapper:hover ul li:nth-child(4)
+{
+	transition-delay: 1s;
+}
+
+.img-wrapper ul li a
+{
+	color: tomato;
+	background: rgba(255,255,255,0);
+}
+
+.img-wrapper ul li i
+{
+	color: tomato;
+	background: rgba(255,255,255,0);
+}
+
+.img-wrapper ul li i:hover
+{
+	color: #fff;
+	background: rgba(255,255,255,0);
+}
+
+/* ------------ */
+/* product */
+/*.priceContainer{
+     display: flex;    
+  border: 1px solid black;
+  width: auto;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 5px;
+  transition: opacity 500ms ease-in-out;
+  border-radius: 15px;
+  background-color: aqua;
+  opacity: 0.65;
+  height:50px;
+  align-items: center;
+  border: none;
+} */
+/* .DropDown{
+  background-color: tomato!important;
+  width: 10px!important;
+  height: 10px!important;
+  padding: 8px!important;
+} */
+.EditOutlined:hover, .DeleteOutlined:hover{
+  background-color:white!important
+}
+.price{
+  width: 300px;
+  font-family: 'Anton', sans-serif;
+  word-spacing: 5px;
+  color: tomato;
+}
+
+.button{
+  width: 60px;
+  border: none;
+  background-color: aqua;
+}
+
+.trash-btn{
+  padding: 50px;
+}
+
+h5{
+  word-spacing: 5px;
+}
+/* *** */
+.product__info >p{
+    margin-bottom: 8px;
+}
+
+.info__price{
+    font-weight: bold;
+}
+
+.info__name { 
+    font-size: 1rem;
+    overflow: hidden;
+    margin-top:-50px
+}
+
+.info__description{
+    font-size: 0.8rem;
+}
+
+.Link__Detail{
+  background-color: #171717;
+  
+}
+.info__button{
+  display:block;
+  width: 100%;
+  text-decoration: none;
+  text-align :center;
+  color: tomato;
+  background: #333!important;
+  padding:0 0 5px 2em!important;
+  border: 1px solid #171717;
+  font-size:1rem;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  height:auto;
+  margin-right:-10px!important;
+  
+}
+
+.info__button:hover{
+  background: #171717;
+  color: #f4f4f4;
+}
+.icon_instagram{
+  margin-top:90px;
+  padding-bottom:-5px
+}
+.icon_facebook{
+  margin-top:-12px;
+  margin-bottom: -12px;
+}
+.DeleteOutlined{
+  margin-top: -12px;
+}
+/*
+.Link__{
+  margin-top: -40px;
+  
+}
+.info__{
+  display:block;
+  width: 100%;
+  text-decoration: none;
+  text-align :center;
+  color: tomato;
+  background: #333!important;
+  padding:0 0 0 2em!important;
+  border: 1px solid #171717;
+  font-size:1rem;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  height:auto;
+  margin-top:40px;
+  margin-right:-10px!important
+}
+.info__:hover{
+  background: #171717;
+  color: #f4f4f4;
+}*/
+
+@media (max-width:1232px){
+ .product{
+     width:360px;
+ }
+}
+
+@media (max-width:1115px){
+    .product{
+        width:330px;
+    }
+   }
+@media (max-width:1028px){
+    .product{
+        width:300px;
+    }
+}
+
+@media (max-width:950px){
+    .product{
+        width:400px;
+    }
+   }
+
+@media (max-width:830px){
+    .product{
+        width:330px;
+    }
+}
+
+@media (max-width:700px){
+    .product{
+        width:290px;
+    }
+   }
+
+   @media (max-width:630px){
+    .product{
+        width:450px;
+    }
+   }
+
+   @media (max-width:500px){
+    .product{
+        width:350px;
+    }
+   }
+
+   @media (max-width:400px){
+    .product{
+        width:300px;
+    }
+   }
+
+   .modal:hover {  
+    box-shadow: 30px 20px 15px 0px #bb0202;
+  }
+  .login-box {
+    top: 50%;
+    box-sizing: border-box;
+    border-radius:5%;
+    margin-top: 50px;
+  }
+  
+  .input_Change{
+    text-align: center;
+  }
+  .my-modal{
+  background: url('https://images.unsplash.com/photo-1619252584172-a83a949b6efd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80') ;
+   background-repeat: no-repeat;
+  background-size: cover;
+     width:600px; 
+    box-shadow: 15px 15px 25px rgb(0 0 0);
+    padding-left: 50px;
+    border-radius:5%;
+    top: 50%;
+  }
+
+  .login-box .user-box {
+    position: relative;
+    margin-top: 10px;
+  
+  }
+ 
+  .login-box .user-box input {
+    width: 150px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #f37f77;
+    margin-bottom: 30px;
+    margin-left:40px;
+    border: none;
+    border-bottom: 1px solid #f37f77;
+    outline: none;
+    background: transparent;
+  }
+  .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px !important;
+    color: #f37f77;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    margin-left:18rem;
+    text-align: center;
+    letter-spacing: 4px;
+    width : 150px;
+  }
+  
+  .login-box a:hover {
+    background: #f37f77;
+    color: #fff !important;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #f37f77,
+                0 0 25px #f37f77,
+                0 0 50px #f37f77,
+                0 0 100px #f37f77;
+  }
+  
+  .login-box a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f40353);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #f40b03);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+
+   .login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #7b85df);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+   
+  .login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #f43b03);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+   
+  
+  /*---------------------------------- bouton add movie -----------------user-box------------ */
+  /* 
+  .glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  left:40%
+  }
+  
+  .glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000,#1ca391, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  }
+  
+  .glow-on-hover:active {
+  color: #000
+  }
+  
+  .glow-on-hover:active:after {
+  background: transparent;
+  }
+  
+  .glow-on-hover:hover:before {
+  opacity: 1;
+  }
+  
+  .glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  }
+  
+  @keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+  } */
