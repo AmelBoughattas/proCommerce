@@ -40,7 +40,7 @@ const HomeScreen = () => {
                     />
                     <Carousel.Caption>
                         <h3>MAYCOLL</h3>
-                        <p>Welcome in website MAYCOLL</p>
+                        <p>Welcome to our website MAYCOLL</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -52,8 +52,8 @@ const HomeScreen = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Welcom Maycoll</h3>
-                        <p>We have best technology</p>
+                        <h3>Welcome Maycoll</h3>
+                        <p>We have the best technology</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -64,7 +64,7 @@ const HomeScreen = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>MayColl is an e-commerce</h3>
+                        <h3>MayColl is an shopping</h3>
                         <p>Which has stores of different technology</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -77,7 +77,7 @@ const HomeScreen = () => {
 
                     <Carousel.Caption>
                         <h3>MAYCOLL</h3>
-                        <p>We have best technology</p>
+                        <p>We have the best technology</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
