@@ -8,8 +8,8 @@
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/seederScript"
-   
+    "data:import": "node backend/seederScript",
+    "heroku-postbuild":"npm i --prefix client npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
