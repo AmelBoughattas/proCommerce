@@ -65,7 +65,7 @@ const HomeScreen = () => {
 
                     <Carousel.Caption>
                         <h3>MayColl</h3>
-                        <p>Welcome to our website</p>
+                        <p>Welcome to our website !</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
