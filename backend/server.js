@@ -27,10 +27,16 @@ app.use("/api/products", require('./routes/productRoutes'))
 app.use("/api/command",require('./routes/commandRouter'))
 
 //setup for deployment
-app.use(express.static(path.join(__dirname,'../','frontend','build')));
+if(process.env.NODE_ENV === 'production'){
+    app.use('/',express.static('frontend/build'))
+    app.get('*',(req,res)=>{
+        res.sendFile(path.join(__dirname,'frontend/build/index.html'))
+    })
+}
+/* app.use(express.static(path.join(__dirname,'../','frontend','build')));
 app.get('*', (req,res)=>{
     res.sendFile(path.join(__dirname,'../','frontend','build','index.html'));
 });
-
+ */
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
