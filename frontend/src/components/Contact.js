@@ -51,7 +51,7 @@ const Contact = () => {
                                                     <p className="mb-4"><RoomIcon />   SOUSSE</p>
                                                     <p className="mb-4"><RoomIcon />   TUNIS</p>
                                                     <div className="img-wrap img-2">
-                                                        <img className="Back" src={back} alt="back" />   </div>
+                                                        <img className="Back" src={back} alt="ba" />   </div>
                                                     <div className="img-wrap img-1">
 
                                                         <img className="watch" src={myImage} alt="img" />
