@@ -58,7 +58,7 @@ const CartScreen = () => {
           {cartItems.length === 0 ? (
             <div className="cartscreen__back"> 
              <img className="cartscreen__back__img" src="https://i.imgur.com/dCdflKN.png" alt="" width="200" height="200"  />
-             Your Cart Is Empty<br/>Add something to make me happy :) <br/> <Link to="/"><span style={{fontWeight:'bold'}}>Go Back</span></Link>
+             Your Cart Is Empty<br/> <Link to="/"><span style={{fontWeight:'bold'}}>Go Back</span></Link>
             </div>
           ) : (
             cartItems.map((item) => (
