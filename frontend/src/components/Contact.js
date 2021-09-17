@@ -8,7 +8,7 @@ import RoomIcon from '@material-ui/icons/Room';
 import myImage from '../Images/watchBlack.png';
 import myeccouteur from '../Images/ecoutteur.png';
 import labtop_2 from '../Images/labtop_2.png';
-import back from '../Images/back.png';
+import back from './back.png'
 import './Contact.css';
 import manetteJeu from '../Images/manetteJeu.png';
 import watchWhite from '../Images/watchWhite.png';
